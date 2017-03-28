@@ -1,0 +1,15 @@
+[
+  {
+    "regex": "news.baidu.com",
+
+    "linkSelector": ".result > h3 > a"
+  },
+  {
+    "regex": "news.163.com",
+
+    "contentSelector": ".post-text",
+    "readCountSelector": "",
+    "participateCountSelector": "a.js-tiejoincount",
+    "commentCountSelector": "a.js-tiecount"
+  }
+]
