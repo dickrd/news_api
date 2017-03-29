@@ -1,7 +1,8 @@
-package schedule;
+package message;
 
 /**
  * Created by Dick Zhou on 3/29/2017.
+ *
  */
 public class TaskRequest {
 
@@ -14,6 +15,4 @@ public class TaskRequest {
      * 请求的URL数目
      */
     int urlSize;
-
-
 }
