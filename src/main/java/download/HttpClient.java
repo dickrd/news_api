@@ -9,16 +9,16 @@ import java.nio.charset.StandardCharsets;
  * Created by Dick Zhou on 3/28/2017.
  * Handles http request and sessions.
  */
-public class HttpClient {
+class HttpClient {
 
     private static final int chunkSize = 1024;
-    private static final Charset charset = StandardCharsets.UTF_8;
+    private static final Charset defaultCharset = StandardCharsets.UTF_8;
     private static final boolean useCaches = false;
     private static final String userAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36";
     private static final String accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
     private static final String acceptLanguage = "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,zh-TW;q=0.2";
 
-    public HttpClient() {
+    HttpClient() {
         newSession();
     }
 
@@ -26,11 +26,11 @@ public class HttpClient {
         CookieHandler.setDefault(new CookieManager(null, CookiePolicy.ACCEPT_ALL));
     }
 
-    public String getAsString(String urlString) throws IOException {
-        return getAsString(urlString, charset);
+    String getAsString(String urlString) throws IOException {
+        return getAsString(urlString, defaultCharset);
     }
 
-    public String getAsString(String urlString, Charset charset) throws IOException {
+    String getAsString(String urlString, Charset charset) throws IOException {
         URLConnection connection = new URL(urlString).openConnection();
 
         // Set connection properties.

@@ -5,7 +5,8 @@ import com.google.gson.JsonObject;
 import content.JsoupConfig;
 import content.JsoupContentParser;
 import content.Record;
-import download.GenericDownloader;
+import download.BaiduSearch;
+import download.NeteaseClient;
 import storage.CsvFileStorage;
 
 import java.io.IOException;
@@ -22,12 +23,14 @@ public class SingleThreadWorker {
 
     private static final Logger logger = Logger.getLogger(SingleThreadWorker.class.getName());
 
-    private GenericDownloader downloader;
+    private BaiduSearch baiduSearch;
+    private NeteaseClient neteaseClient;
     private CsvFileStorage csvFileStorage;
 
     public SingleThreadWorker() {
         try {
-            downloader = new GenericDownloader();
+            baiduSearch = new BaiduSearch();
+            neteaseClient = new NeteaseClient();
             csvFileStorage = new CsvFileStorage();
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error initializing!", e);
@@ -37,7 +40,7 @@ public class SingleThreadWorker {
     public void feeds(String[] keywords) {
         for (String keyword : keywords) {
             try {
-                String searchResult = downloader.search(keyword);
+                String searchResult = baiduSearch.searchNews(keyword);
                 List<String> links = JsoupContentParser.parseLinks(searchResult, "",
                         JsoupConfig.getSelectors("news.baidu.com"));
 
@@ -45,9 +48,9 @@ public class SingleThreadWorker {
                     if (!link.contains("news.163.com") && !link.contains("money.163.com") && !link.contains("tech.163.com"))
                         continue;
 
-                    String download = downloader.download(link, Charset.forName("gbk"));
+                    String download = baiduSearch.download(link, Charset.forName("gbk"));
                     Record record = JsoupContentParser.parseRecord(download, link, JsoupConfig.getSelectors("news.163.com"));
-                    JsonObject jsonObject = new Gson().fromJson(downloader.getNeteaseCount(link), JsonObject.class);
+                    JsonObject jsonObject = new Gson().fromJson(baiduSearch.getNeteaseCount(link), JsonObject.class);
                     int vote = jsonObject.get("cmtVote").getAsInt();
                     int reply = jsonObject.get("rcount").getAsInt();
                     record.setCommentCount(reply);
