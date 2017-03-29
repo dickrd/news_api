@@ -20,11 +20,11 @@ public class JsoupContentParser {
         record.setUrl(baseUrl);
         record.setContent(document.select(selectors.contentSelector).text());
 
-        if (selectors.commentCountSelector != null && selectors.commentCountSelector.contentEquals(""))
-            record.setCommentCount(Integer.parseInt(document.select(selectors.commentCountSelector).text()));
-        if (selectors.participateCountSelector != null && selectors.participateCountSelector.contentEquals(""))
-            record.setParticipateCount(Integer.parseInt(document.select(selectors.participateCountSelector).text()));
-        if (selectors.readCountSelector != null && selectors.readCountSelector.contentEquals(""))
+        if (selectors.commentCountSelector != null && !selectors.commentCountSelector.contentEquals(""))
+            record.setCommentCount(Integer.parseInt(document.select(selectors.commentCountSelector).get(0).text()));
+        if (selectors.participateCountSelector != null && !selectors.participateCountSelector.contentEquals(""))
+            record.setParticipateCount(Integer.parseInt(document.select(selectors.participateCountSelector).get(0).text()));
+        if (selectors.readCountSelector != null && !selectors.readCountSelector.contentEquals(""))
             record.setReadCount(Integer.parseInt(document.select(selectors.readCountSelector).text()));
 
         return record;
@@ -52,7 +52,7 @@ public class JsoupContentParser {
      * Selectors used when parse record.
      */
     public static class Selectors {
-        String regex;
+        String name;
 
         String contentSelector;
         String readCountSelector;

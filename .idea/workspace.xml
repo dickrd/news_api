@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="011c70f5-1cb2-4e09-9ee4-8c1c82a109cc" name="Default" comment="" />
+    <list default="true" id="011c70f5-1cb2-4e09-9ee4-8c1c82a109cc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/content/JsoupConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/schedule/SingleThreadWorkerTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news_api.iml" afterPath="$PROJECT_DIR$/news_api.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/selectors.json" afterPath="$PROJECT_DIR$/selectors.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content/JsoupContentParser.java" afterPath="$PROJECT_DIR$/src/main/java/content/JsoupContentParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content/Record.java" afterPath="$PROJECT_DIR$/src/main/java/content/Record.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/download/GenericDownloader.java" afterPath="$PROJECT_DIR$/src/main/java/download/GenericDownloader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java" afterPath="$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,49 +31,23 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HttpClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/download/HttpClient.java">
+      <file leaf-file-name="GenericDownloader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/download/GenericDownloader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
+            <state relative-caret-position="464">
               <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#810#811#0" expanded="true" />
-                <element signature="e#838#839#0" expanded="true" />
-                <element signature="e#870#871#0" expanded="true" />
-                <element signature="e#960#961#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GenericDownloader.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/download/GenericDownloader.java">
+      <file leaf-file-name="content.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/content.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SingleThreadWorker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-158">
-              <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="selectors.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/selectors.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+            <state relative-caret-position="336">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -77,11 +65,70 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="HttpClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/download/HttpClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleThreadWorker.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleThreadWorkerTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/schedule/SingleThreadWorkerTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="16" column="56" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="56" />
+              <folding>
+                <element signature="e#293#294#0" expanded="true" />
+                <element signature="e#360#361#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="selectors.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/selectors.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsoupConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/content/JsoupConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Record.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/content/Record.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="434">
+              <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#306#307#0" expanded="true" />
@@ -92,10 +139,10 @@
                 <element signature="e#513#514#0" expanded="true" />
                 <element signature="e#553#554#0" expanded="true" />
                 <element signature="e#595#596#0" expanded="true" />
-                <element signature="e#649#650#0" expanded="true" />
-                <element signature="e#705#706#0" expanded="true" />
-                <element signature="e#751#752#0" expanded="true" />
-                <element signature="e#799#800#0" expanded="true" />
+                <element signature="e#656#657#0" expanded="true" />
+                <element signature="e#712#713#0" expanded="true" />
+                <element signature="e#765#766#0" expanded="true" />
+                <element signature="e#813#814#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -104,8 +151,8 @@
       <file leaf-file-name="JsoupContentParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/content/JsoupContentParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,10 +166,18 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>post_te</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="modificationStamps">
@@ -151,11 +206,14 @@
         <option value="$PROJECT_DIR$/src/main/java/download/GeniracDownloader.java" />
         <option value="$PROJECT_DIR$/src/main/java/content/RecordParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/content/Selectors.java" />
-        <option value="$PROJECT_DIR$/src/main/java/content/Record.java" />
-        <option value="$PROJECT_DIR$/src/main/java/download/GenericDownloader.java" />
-        <option value="$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/content/JsoupContentParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/content/JsoupConfig.java" />
         <option value="$PROJECT_DIR$/selectors.json" />
+        <option value="$PROJECT_DIR$/src/main/java/content/JsoupContentParser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/schedule/SingleThreadWorkerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/download/GenericDownloader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/content/Record.java" />
+        <option value="$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java" />
+        <option value="$PROJECT_DIR$/content.csv" />
       </list>
     </option>
   </component>
@@ -200,6 +258,7 @@
     <option name="width" value="1456" />
     <option name="height" value="876" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -244,6 +303,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="schedule" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -394,7 +461,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BaiduSearchTest">
+  <component name="RunManager" selected="JUnit.SingleThreadWorkerTest">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1042,10 +1109,10 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="BaiduSearchTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
+    <configuration default="false" name="SingleThreadWorkerTest" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="download.*" />
+          <option name="PATTERN" value="schedule.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -1053,7 +1120,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="schedule" />
-      <option name="MAIN_CLASS_NAME" value="schedule.BaiduSearchTest" />
+      <option name="MAIN_CLASS_NAME" value="schedule.SingleThreadWorkerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -1069,7 +1136,7 @@
       <method />
     </configuration>
     <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.BaiduSearchTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.SingleThreadWorkerTest" />
     </list>
   </component>
   <component name="SbtLocalSettings">
@@ -1088,44 +1155,44 @@
       <option name="presentableId" value="Default" />
       <updated>1490667053950</updated>
       <workItem from="1490667058538" duration="129000" />
-      <workItem from="1490668356812" duration="11439000" />
+      <workItem from="1490668356812" duration="17361000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 01m 33s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 08h 48m 00s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 03m 57s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 08h 50m 39s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 06m 40s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 08h 51m 02s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 07m 36s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 08h 53m 16s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 16m 58s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 08h 53m 42s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 18m 23s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 08h 57m 08s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 19m 41s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 09h 04m 15s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 21m 55s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 09h 05m 28s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 30m 36s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 09h 16m 17s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="BaiduSearchTest - 2017.03.28 at 14h 32m 01s.xml">
-      <configuration name="BaiduSearchTest" configurationId="JUnit" />
+    <history-entry file="SingleThreadWorkerTest - 2017.03.29 at 09h 36m 44s.xml">
+      <configuration name="SingleThreadWorkerTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11568000" />
+    <option name="totallyTimeSpent" value="17490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1140,7 +1207,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1170,11 +1237,12 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="19" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
-        <watch expression="((HttpURLConnection) connection).getCookieHandler()" language="JAVA" custom="sun.net.www.protocol.http.HttpURLConnection" />
+        <watch expression="document.select(selectors.commentCountSelector).get(0)" language="JAVA" custom="sun.net.www.protocol.http.HttpURLConnection" />
+        <watch expression="document.select(selectors.participateCountSelector)" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
@@ -1203,14 +1271,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1263,20 +1323,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/download/HttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#810#811#0" expanded="true" />
-            <element signature="e#838#839#0" expanded="true" />
-            <element signature="e#870#871#0" expanded="true" />
-            <element signature="e#960#961#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/content/NetEase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -1312,23 +1358,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/storage/CsvFileStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_25/src.zip!/java/util/logging/LogRecord.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="395" column="16" lean-forward="false" selection-start-line="395" selection-start-column="16" selection-end-line="395" selection-end-column="16" />
           <folding>
-            <element signature="e#11575#11576#0" expanded="true" />
-            <element signature="e#11619#11620#0" expanded="true" />
+            <element signature="e#11575#11576#0" expanded="false" />
+            <element signature="e#11619#11620#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1357,28 +1393,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/download/GenericDownloader.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="30" column="46" lean-forward="false" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        <state relative-caret-position="208">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/CGLO2RBF00018AOP.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2112">
+          <caret line="5" column="69" lean-forward="true" selection-start-line="5" selection-start-column="69" selection-end-line="5" selection-end-column="69" />
+          <folding>
+            <marker date="1490748320020" expanded="true" signature="63890:63972" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/download/HttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/schedule/SingleThreadWorkerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-158">
-          <caret line="3" column="22" lean-forward="false" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="224">
+          <caret line="16" column="56" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="56" />
+          <folding>
+            <element signature="e#293#294#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/selectors.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="30" lean-forward="false" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/content/JsoupConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/content/Record.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        <state relative-caret-position="434">
+          <caret line="37" column="11" lean-forward="false" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#306#307#0" expanded="true" />
@@ -1389,29 +1464,59 @@
             <element signature="e#513#514#0" expanded="true" />
             <element signature="e#553#554#0" expanded="true" />
             <element signature="e#595#596#0" expanded="true" />
-            <element signature="e#649#650#0" expanded="true" />
-            <element signature="e#705#706#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#799#800#0" expanded="true" />
+            <element signature="e#656#657#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#813#814#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/content/JsoupContentParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="55" column="0" lean-forward="true" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/selectors.json">
+    <entry file="file://$PROJECT_DIR$/content.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="12" column="42" lean-forward="false" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        <state relative-caret-position="336">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/storage/CsvFileStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="22" column="5" lean-forward="false" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/download/GenericDownloader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

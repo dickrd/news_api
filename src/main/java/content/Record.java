@@ -31,17 +31,17 @@ public class Record {
         this.readCount = readCount;
     }
 
-    void setParticipateCount(int participateCount) {
+    public void setParticipateCount(int participateCount) {
         this.participateCount = participateCount;
     }
 
-    void setCommentCount(int commentCount) {
+    public void setCommentCount(int commentCount) {
         this.commentCount = commentCount;
     }
 
     @Override
     public String toString() {
-        return String.format("%s, %s, %s, %d, %d, %d\n",
-                url, content, Arrays.toString(images), readCount, participateCount, commentCount);
+        return String.format("%s, %d, %d, %d, %s, %s\n",
+                url, readCount, participateCount, commentCount, Arrays.toString(images), content);
     }
 }

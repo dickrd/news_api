@@ -1,11 +1,15 @@
 package schedule;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import content.JsoupConfig;
 import content.JsoupContentParser;
 import content.Record;
 import download.GenericDownloader;
 import storage.CsvFileStorage;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,14 +38,22 @@ public class SingleThreadWorker {
         for (String keyword : keywords) {
             try {
                 String searchResult = downloader.search(keyword);
-                List<String> links = JsoupContentParser.parseLinks(searchResult, "", "");
+                List<String> links = JsoupContentParser.parseLinks(searchResult, "",
+                        JsoupConfig.getSelectors("news.baidu.com"));
 
                 for (String link : links) {
-                    String download = downloader.download(link);
-                    JsoupContentParser.parseRecord(download, link, selectors);
-                }
+                    if (!link.contains("news.163.com") && !link.contains("money.163.com") && !link.contains("tech.163.com"))
+                        continue;
 
-                csvFileStorage.store();
+                    String download = downloader.download(link, Charset.forName("gbk"));
+                    Record record = JsoupContentParser.parseRecord(download, link, JsoupConfig.getSelectors("news.163.com"));
+                    JsonObject jsonObject = new Gson().fromJson(downloader.getNeteaseCount(link), JsonObject.class);
+                    int vote = jsonObject.get("cmtVote").getAsInt();
+                    int reply = jsonObject.get("rcount").getAsInt();
+                    record.setCommentCount(reply);
+                    record.setParticipateCount(reply + vote);
+                    csvFileStorage.store(record);
+                }
             } catch (Exception e) {
                 logger.log(Level.WARNING, "Keyword failed.", e);
             }
