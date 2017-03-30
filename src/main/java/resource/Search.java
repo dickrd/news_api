@@ -1,14 +1,13 @@
 package resource;
 
 import com.google.gson.Gson;
+import content.Record;
+import message.QueryResponse;
 import message.SearchRequest;
 import message.SearchResponse;
 import schedule.SingleThreadWorker;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -16,7 +15,7 @@ import javax.ws.rs.core.MediaType;
  *
  */
 
-@Path("search")
+@Path("/search")
 public class Search {
 
     private Gson gson = new Gson();
@@ -25,11 +24,24 @@ public class Search {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public String search(String jsonString) {
-        SearchRequest searchRequest = gson.fromJson(jsonString, SearchRequest.class);
-
-        SingleThreadWorker singleThreadWorker = new SingleThreadWorker();
-        String id = singleThreadWorker.feeds(searchRequest.getKeywords());
+        String id;
+        try {
+            SearchRequest searchRequest = gson.fromJson(jsonString, SearchRequest.class);
+            id = SingleThreadWorker.feeds(searchRequest.getKeywords());
+        } catch (Exception e) {
+            id = "";
+        }
 
         return gson.toJson(new SearchResponse(id));
+    }
+
+    @GET
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public String query(@PathParam("id") String id) {
+        Record[] records = SingleThreadWorker.query(id);
+
+        return gson.toJson(new QueryResponse(id, records));
     }
 }

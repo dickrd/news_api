@@ -9,10 +9,15 @@ public class TaskAssignment {
     /**
      * 任务ID
      */
-    String id;
+    private String id;
 
     /**
      * 满足条件的URL
      */
-    String urls[];
+    private String urls[];
+
+    public TaskAssignment(String id, String[] urls) {
+        this.id = id;
+        this.urls = urls;
+    }
 }

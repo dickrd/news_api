@@ -9,10 +9,18 @@ public class TaskRequest {
     /**
      * 支持的网站
      */
-    String names[];
+    private String names[];
 
     /**
      * 请求的URL数目
      */
-    int urlSize;
+    private int urlSize;
+
+    public String[] getNames() {
+        return names;
+    }
+
+    public int getUrlSize() {
+        return urlSize;
+    }
 }
