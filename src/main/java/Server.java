@@ -2,6 +2,7 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
 import resource.Search;
+import resource.Task;
 
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.UriBuilder;
@@ -19,7 +20,7 @@ public class Server extends Application {
 
     public static void main(String[] args) {
         URI baseUri = UriBuilder.fromUri("http://localhost/").port(666).build();
-        ResourceConfig config = new ResourceConfig(Search.class);
+        ResourceConfig config = new ResourceConfig(Search.class, Task.class);
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, config);
 
         //noinspection InfiniteLoopStatement

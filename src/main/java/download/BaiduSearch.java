@@ -11,7 +11,8 @@ import java.nio.charset.StandardCharsets;
  */
 public class BaiduSearch {
 
-    private static final String queryUrlBaidu = "http://news.baidu.com/ns?word=%s";
+    public static final String queryUrlBaidu = "http://news.baidu.com/ns?word=%s";
+
     private static final Charset charset = StandardCharsets.UTF_8;
 
     private HttpClient client;

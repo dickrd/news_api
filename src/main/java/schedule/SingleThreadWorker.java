@@ -8,6 +8,7 @@ import message.TaskAssignment;
 import storage.DatabaseConnection;
 import util.SecurityUtil;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -21,6 +22,8 @@ import java.util.logging.Logger;
 public class SingleThreadWorker {
 
     private static final Logger logger = Logger.getLogger(SingleThreadWorker.class.getName());
+
+    private static final String[] protocols = new String[]{"http://", "https://"};
 
     private static boolean hasInited = false;
     private static Worker worker;
@@ -36,6 +39,7 @@ public class SingleThreadWorker {
             databaseConnection = new DatabaseConnection();
 
             hasInited = true;
+            logger.log(Level.INFO, "Initialized.");
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Error initializing!", e);
         }
@@ -48,6 +52,7 @@ public class SingleThreadWorker {
         try {
             String id = SecurityUtil.bytesToHex(SecurityUtil.md5(Arrays.toString(keywords).getBytes()));
             worker.newTask(id, keywords);
+            logger.log(Level.INFO, "Task added: " + id);
             return id;
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Unable to feed.", e);
@@ -56,15 +61,46 @@ public class SingleThreadWorker {
     }
 
     public static Record[] query(String id) {
-        Record[] emptyRecords = new Record[0];
         if (!hasInited)
-            return emptyRecords;
+            init();
+
+        Record[] emptyRecords = new Record[0];
 
         return databaseConnection.get(id).toArray(emptyRecords);
     }
 
     public static TaskAssignment dispatch(String[] names, int size) {
-        return null;
+        if (!hasInited)
+            init();
+
+        String aTask = redisConnection.getTask();
+        List<String> urls = redisConnection.getUrls(aTask, size);
+
+        List<String> matched = new ArrayList<>();
+        List<String> unmatched = new ArrayList<>();
+        boolean isMatched;
+        for (String url: urls) {
+            isMatched = false;
+            for (String name: names) {
+                for (String protocol: protocols) {
+                    if (url.startsWith(protocol + name)) {
+                        isMatched = true;
+                        break;
+                    }
+                }
+                if (isMatched)
+                    break;
+            }
+
+            if (isMatched)
+                matched.add(url);
+            else
+                unmatched.add(url);
+        }
+        redisConnection.addUrls(aTask, unmatched);
+        logger.log(Level.INFO, "Task dispatched.");
+
+        return new TaskAssignment(aTask, matched.toArray(new String[0]));
     }
 
     private static class Worker extends Thread {
@@ -90,6 +126,7 @@ public class SingleThreadWorker {
                 synchronized (workMap) {
                     while (workMap.isEmpty()) {
                         try {
+                            logger.log(Level.INFO, "Waiting for new task.");
                             workMap.wait();
                         } catch (InterruptedException e) {
                             logger.log(Level.WARNING, "Error.", e);
@@ -105,12 +142,13 @@ public class SingleThreadWorker {
                     }
                 }
 
+                logger.log(Level.INFO, "Search started.");
                 for (String keyword : keywords) {
                     try {
                         String searchResult = baiduSearch.searchNews(keyword);
-                        List<String> links = JsoupContentParser.parseLinks(searchResult, "",
+                        List<String> links = JsoupContentParser.parseLinks(searchResult, BaiduSearch.queryUrlBaidu,
                                 JsoupConfig.getSelectors("news.baidu.com"));
-                        redisConnection.add(id, links);
+                        redisConnection.addUrls(id, links);
                     } catch (Exception e) {
                         logger.log(Level.WARNING, "Keyword failed: " + keyword, e);
                     }

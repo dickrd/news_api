@@ -40,7 +40,7 @@ public class JsoupContentParser {
         for (Element element: document.select(selectors.linkSelector)) {
             if (element.hasAttr("href")) {
                 String href = element.attr("href");
-                resultUrls.add(href);
+                resultUrls.add(href.substring(0, href.lastIndexOf("#")));
             }
         }
 
@@ -51,7 +51,7 @@ public class JsoupContentParser {
      * Created by Dick Zhou on 3/28/2017.
      * Selectors used when parse record.
      */
-    public static class Selectors {
+    static class Selectors {
         String name;
 
         String contentSelector;
