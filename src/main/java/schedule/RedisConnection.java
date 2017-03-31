@@ -16,12 +16,14 @@ import java.util.logging.Logger;
 class RedisConnection {
 
     private static final Logger logger = Logger.getLogger(RedisConnection.class.getName());
-    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "localhost");
+    private static final JedisPool pool = new JedisPool(new JedisPoolConfig(), "qc.hehehey.com");
 
     private static final String taskSet = "tasks";
     private static final String taskList = "queue";
     private static final String urlSetPrefix = "task:";
     private static final String urlListPrefix = "task:queue:";
+
+    private static final String emptyValue = "nil";
 
     void addUrls(String id, List<String> urls) {
         try (Jedis jedis = pool.getResource()) {
@@ -42,9 +44,29 @@ class RedisConnection {
         }
     }
 
+    void returnUrls(String id, List<String> urls) {
+        try (Jedis jedis = pool.getResource()) {
+            for (String url: urls) {
+                jedis.lpush(urlListPrefix + id, url);
+            }
+        } catch (Exception e) {
+            logger.log(Level.WARNING, "Return failed.", e);
+        }
+    }
+
     String getTask() {
         try (Jedis jedis = pool.getResource()) {
-            return jedis.rpop(taskList);
+            String task = jedis.rpop(taskList);
+            while (task != null) {
+                if (jedis.llen(urlListPrefix + task) > 0) {
+                    jedis.lpush(taskList, task);
+                    break;
+                } else {
+                    task = jedis.rpop(taskList);
+                }
+            }
+
+            return task;
         } catch (Exception e) {
             logger.log(Level.WARNING, "Get failed.", e);
             return "";

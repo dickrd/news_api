@@ -34,6 +34,8 @@ public class SingleThreadWorker {
     private static void init() {
         try {
             worker = new Worker();
+            worker.start();
+
             baiduSearch = new BaiduSearch();
             redisConnection = new RedisConnection();
             databaseConnection = new DatabaseConnection();
@@ -74,8 +76,12 @@ public class SingleThreadWorker {
             init();
 
         String aTask = redisConnection.getTask();
-        List<String> urls = redisConnection.getUrls(aTask, size);
+        if (aTask == null || aTask.contentEquals("")) {
+            logger.log(Level.INFO, "No more task.");
+            return new TaskAssignment(aTask, new String[0]);
+        }
 
+        List<String> urls = redisConnection.getUrls(aTask, size);
         List<String> matched = new ArrayList<>();
         List<String> unmatched = new ArrayList<>();
         boolean isMatched;
@@ -97,7 +103,7 @@ public class SingleThreadWorker {
             else
                 unmatched.add(url);
         }
-        redisConnection.addUrls(aTask, unmatched);
+        redisConnection.returnUrls(aTask, unmatched);
         logger.log(Level.INFO, "Task dispatched.");
 
         return new TaskAssignment(aTask, matched.toArray(new String[0]));

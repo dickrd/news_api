@@ -40,7 +40,10 @@ public class JsoupContentParser {
         for (Element element: document.select(selectors.linkSelector)) {
             if (element.hasAttr("href")) {
                 String href = element.attr("href");
-                resultUrls.add(href.substring(0, href.lastIndexOf("#")));
+                if (href.contains("#"))
+                    resultUrls.add(href.substring(0, href.lastIndexOf("#")));
+                else
+                    resultUrls.add(href);
             }
         }
 
