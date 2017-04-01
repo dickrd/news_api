@@ -25,7 +25,7 @@ class RedisConnection {
 
     private static final String emptyValue = "nil";
 
-    void addUrls(String id, List<String> urls) {
+    void addUrls(String id, String[] urls) {
         try (Jedis jedis = pool.getResource()) {
             if (!jedis.sismember(taskSet, id)) {
                 jedis.sadd(taskSet, id);

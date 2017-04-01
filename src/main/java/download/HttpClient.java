@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
  * Created by Dick Zhou on 3/28/2017.
  * Handles http request and sessions.
  */
-class HttpClient {
+public class HttpClient {
 
     private static final int chunkSize = 1024;
     private static final Charset defaultCharset = StandardCharsets.UTF_8;
@@ -18,7 +18,7 @@ class HttpClient {
     private static final String accept = "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8";
     private static final String acceptLanguage = "en-US,en;q=0.8,zh-CN;q=0.6,zh;q=0.4,zh-TW;q=0.2";
 
-    HttpClient() {
+    public HttpClient() {
         newSession();
     }
 
@@ -26,18 +26,18 @@ class HttpClient {
         CookieHandler.setDefault(new CookieManager(null, CookiePolicy.ACCEPT_ALL));
     }
 
-    String getAsString(String urlString) throws IOException {
-        return getAsString(urlString, defaultCharset);
+    public String getAsString(String urlString) throws IOException {
+        return getAsString(urlString, defaultCharset.name());
     }
 
-    String getAsString(String urlString, Charset charset) throws IOException {
+    public String getAsString(String urlString, String charset) throws IOException {
         URLConnection connection = new URL(urlString).openConnection();
 
         // Set connection properties.
         connection.setRequestProperty("User-Agent", userAgent);
         connection.setRequestProperty("Accept", accept);
         connection.setRequestProperty("Accept-Language", acceptLanguage);
-        connection.setRequestProperty("Accept-Charset", charset.name());
+        connection.setRequestProperty("Accept-Charset", charset);
         //connection.setRequestProperty("Cookie", formatCookie());
         connection.setUseCaches(useCaches);
         connection.connect();
@@ -52,6 +52,6 @@ class HttpClient {
             baos.write(chunk, 0, readSize);
         }
         inputStream.close();
-        return baos.toString(charset.name());
+        return baos.toString(charset);
     }
 }

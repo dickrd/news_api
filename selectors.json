@@ -2,14 +2,11 @@
   {
     "name": "news.baidu.com",
 
-    "linkSelector": ".result > h3 > a"
+    "resultLink": ".result > h3 > a"
   },
   {
-    "name": "news.163.com",
+    "name": "news.sogou.com",
 
-    "contentSelector": ".post_text",
-    "readCountSelector": "",
-    "participateCountSelector": "a.js-tiejoincount",
-    "commentCountSelector": "a.js-tiecount"
+    "resultLink": ".vrTitle > a"
   }
 ]

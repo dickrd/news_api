@@ -1,4 +1,6 @@
-package download;
+package site;
+
+import download.HttpClient;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -6,23 +8,23 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 /**
- * Created by Dick Zhou on 3/28/2017.
- * Download result from baidu news and etc.
+ * Created by Dick Zhou on 4/1/2017.
+ *
  */
-public class BaiduSearch {
+public class SougouSearch {
 
-    public static final String queryUrlBaidu = "http://news.baidu.com/ns?word=%s";
+    public static final String queryUrlBaidu = "http://news.sogou.com/news?query=%s";
 
     private static final Charset charset = StandardCharsets.UTF_8;
 
     private HttpClient client;
 
-    public BaiduSearch() {
+    public SougouSearch() {
         client = new HttpClient();
     }
 
-    public String searchNews(String keyword) throws IOException {
+    public String search(String keyword) throws IOException {
         String requestUrl = String.format(queryUrlBaidu, URLEncoder.encode(keyword, charset.name()));
-        return client.getAsString(requestUrl);
+        return client.getAsString(requestUrl, charset);
     }
 }

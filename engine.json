@@ -1,0 +1,12 @@
+[
+  {
+    "name": "news.baidu.com",
+    "queryUrl": "http://news.baidu.com/ns?word=%s",
+    "charset": "utf8"
+  },
+  {
+    "name": "news.sogou.com",
+    "queryUrl": "http://news.sogou.com/news?query=%s",
+    "charset": "utf8"
+  }
+]

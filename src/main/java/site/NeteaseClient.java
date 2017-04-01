@@ -1,4 +1,6 @@
-package download;
+package site;
+
+import download.HttpClient;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

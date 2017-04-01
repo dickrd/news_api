@@ -1,9 +1,7 @@
 package schedule;
 
-import content.JsoupConfig;
-import content.JsoupContentParser;
 import content.Record;
-import download.BaiduSearch;
+import site.SearchSites;
 import message.TaskAssignment;
 import storage.DatabaseConnection;
 import util.SecurityUtil;
@@ -27,7 +25,7 @@ public class SingleThreadWorker {
 
     private static boolean hasInited = false;
     private static Worker worker;
-    private static BaiduSearch baiduSearch;
+    private static SearchSites searchSites;
     private static RedisConnection redisConnection;
     private static DatabaseConnection databaseConnection;
 
@@ -36,7 +34,7 @@ public class SingleThreadWorker {
             worker = new Worker();
             worker.start();
 
-            baiduSearch = new BaiduSearch();
+            searchSites = new SearchSites();
             redisConnection = new RedisConnection();
             databaseConnection = new DatabaseConnection();
 
@@ -151,9 +149,8 @@ public class SingleThreadWorker {
                 logger.log(Level.INFO, "Search started.");
                 for (String keyword : keywords) {
                     try {
-                        String searchResult = baiduSearch.searchNews(keyword);
-                        List<String> links = JsoupContentParser.parseLinks(searchResult, BaiduSearch.queryUrlBaidu,
-                                JsoupConfig.getSelectors("news.baidu.com"));
+                        String searchResult = searchSites.searchAll(keyword);
+                        String[] links = searchSites.parseResult(searchResult);
                         redisConnection.addUrls(id, links);
                     } catch (Exception e) {
                         logger.log(Level.WARNING, "Keyword failed: " + keyword, e);
