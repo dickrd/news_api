@@ -1,11 +1,14 @@
 package schedule;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import content.Record;
-import site.SearchSites;
 import message.TaskAssignment;
+import source.SearchSites;
 import storage.DatabaseConnection;
 import util.SecurityUtil;
 
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -23,7 +26,7 @@ public class SingleThreadWorker {
 
     private static final String[] protocols = new String[]{"http://", "https://"};
 
-    private static boolean hasInited = false;
+    private static boolean hasInitialized = false;
     private static Worker worker;
     private static SearchSites searchSites;
     private static RedisConnection redisConnection;
@@ -34,11 +37,14 @@ public class SingleThreadWorker {
             worker = new Worker();
             worker.start();
 
-            searchSites = new SearchSites();
+            // TODO separate source.
+            SearchSites.SearchEngine[] engines = new Gson.fromJson(new FileReader("source.json"),
+                    new TypeToken<SearchSites.SearchEngine[]>(){}.getType());
+            searchSites = new SearchSites(engines);
             redisConnection = new RedisConnection();
             databaseConnection = new DatabaseConnection();
 
-            hasInited = true;
+            hasInitialized = true;
             logger.log(Level.INFO, "Initialized.");
         } catch (Exception e) {
             logger.log(Level.SEVERE, "Error initializing!", e);
@@ -46,7 +52,7 @@ public class SingleThreadWorker {
     }
 
     public static String feeds(String[] keywords) {
-        if (!hasInited)
+        if (!hasInitialized)
             init();
 
         try {
@@ -61,7 +67,7 @@ public class SingleThreadWorker {
     }
 
     public static Record[] query(String id) {
-        if (!hasInited)
+        if (!hasInitialized)
             init();
 
         Record[] emptyRecords = new Record[0];
@@ -70,7 +76,7 @@ public class SingleThreadWorker {
     }
 
     public static TaskAssignment dispatch(String[] names, int size) {
-        if (!hasInited)
+        if (!hasInitialized)
             init();
 
         String aTask = redisConnection.getTask();
@@ -149,8 +155,7 @@ public class SingleThreadWorker {
                 logger.log(Level.INFO, "Search started.");
                 for (String keyword : keywords) {
                     try {
-                        String searchResult = searchSites.searchAll(keyword);
-                        String[] links = searchSites.parseResult(searchResult);
+                        String[] links = searchSites.searchAll(keyword);
                         redisConnection.addUrls(id, links);
                     } catch (Exception e) {
                         logger.log(Level.WARNING, "Keyword failed: " + keyword, e);

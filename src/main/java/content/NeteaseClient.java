@@ -1,4 +1,4 @@
-package site;
+package content;
 
 import download.HttpClient;
 
@@ -27,6 +27,6 @@ public class NeteaseClient {
     }
 
     public String getHtml(String url) throws IOException {
-        return client.getAsString(url, Charset.forName(charset));
+        return client.getAsString(url, charset);
     }
 }
