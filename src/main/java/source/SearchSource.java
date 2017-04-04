@@ -15,14 +15,14 @@ import java.util.logging.Logger;
  * Created by Dick Zhou on 3/28/2017.
  * Download result from search engines and parse the links.
  */
-public class SearchSites {
+public class SearchSource {
 
-    private static final Logger logger = Logger.getLogger(SearchSites.class.getName());
+    private static final Logger logger = Logger.getLogger(SearchSource.class.getName());
 
     private SearchEngine engines[];
     private HttpClient client;
 
-    public SearchSites(SearchEngine[] engines) {
+    public SearchSource(SearchEngine[] engines) {
         this.engines = engines;
 
         client = new HttpClient();

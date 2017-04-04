@@ -4,7 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import content.Record;
 import message.TaskAssignment;
-import source.SearchSites;
+import source.SearchSource;
 import storage.DatabaseConnection;
 import util.SecurityUtil;
 
@@ -28,7 +28,7 @@ public class SingleThreadWorker {
 
     private static boolean hasInitialized = false;
     private static Worker worker;
-    private static SearchSites searchSites;
+    private static SearchSource searchSource;
     private static RedisConnection redisConnection;
     private static DatabaseConnection databaseConnection;
 
@@ -38,9 +38,9 @@ public class SingleThreadWorker {
             worker.start();
 
             // TODO separate source.
-            SearchSites.SearchEngine[] engines = new Gson.fromJson(new FileReader("source.json"),
-                    new TypeToken<SearchSites.SearchEngine[]>(){}.getType());
-            searchSites = new SearchSites(engines);
+            SearchSource.SearchEngine[] engines = new Gson().fromJson(new FileReader("source.json"),
+                    new TypeToken<SearchSource.SearchEngine[]>(){}.getType());
+            searchSource = new SearchSource(engines);
             redisConnection = new RedisConnection();
             databaseConnection = new DatabaseConnection();
 
@@ -155,7 +155,7 @@ public class SingleThreadWorker {
                 logger.log(Level.INFO, "Search started.");
                 for (String keyword : keywords) {
                     try {
-                        String[] links = searchSites.searchAll(keyword);
+                        String[] links = searchSource.searchAll(keyword);
                         redisConnection.addUrls(id, links);
                     } catch (Exception e) {
                         logger.log(Level.WARNING, "Keyword failed: " + keyword, e);
