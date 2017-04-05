@@ -1,7 +1,9 @@
 package source;
 
-import util.JsoupContent;
+import content.JsoupContent;
+import content.RegexContent;
 import download.HttpClient;
+import content.ParseMethod;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -28,12 +30,16 @@ public class SearchSource {
         client = new HttpClient();
     }
 
-    public String[] searchAll(String keyword) throws IOException {
+    public String[] searchAll(String keyword) {
         List<String> results = new ArrayList<>();
         for (SearchEngine engine: engines) {
             logger.log(Level.INFO, "Searching " + engine.name);
-            String aResult = searchResultOf(keyword, engine);
-            results.addAll(Arrays.asList(parseResult(aResult, engine)));
+            try {
+                String aResult = searchResultOf(keyword, engine);
+                results.addAll(Arrays.asList(parseResult(aResult, engine)));
+            } catch (Exception e) {
+                logger.log(Level.WARNING, "Engine failed: " + engine.name, e);
+            }
         }
         return results.toArray(new String[0]);
     }
@@ -44,14 +50,23 @@ public class SearchSource {
     }
 
     private String[] parseResult(String htmlString, SearchEngine engine) {
-        JsoupContent jsoupContent = new JsoupContent(htmlString, engine.queryUrl);
-        return jsoupContent.parseLinks(engine.selector);
+        switch (engine.method.getType()) {
+            case jsoup:
+                JsoupContent jsoupContent = new JsoupContent(htmlString, engine.queryUrl);
+                return jsoupContent.parseLinks(engine.method.getData());
+            case regex:
+                RegexContent regexContent = new RegexContent(htmlString, engine.queryUrl);
+                return regexContent.parseLinks(engine.method.getData(), engine.method.getStrip());
+            default:
+                logger.log(Level.INFO, "No matching parse method: " + engine.method.getType());
+                return new String[0];
+        }
     }
 
     public class SearchEngine {
         String name;
         String queryUrl;
         String charset;
-        String selector;
+        ParseMethod method;
     }
 }

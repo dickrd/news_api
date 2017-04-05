@@ -23,8 +23,6 @@ class RedisConnection {
     private static final String urlSetPrefix = "task:";
     private static final String urlListPrefix = "task:queue:";
 
-    private static final String emptyValue = "nil";
-
     void addUrls(String id, String[] urls) {
         try (Jedis jedis = pool.getResource()) {
             if (!jedis.sismember(taskSet, id)) {
