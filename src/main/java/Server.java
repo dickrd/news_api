@@ -19,7 +19,7 @@ public class Server extends Application {
     private static final Logger logger = Logger.getLogger(Server.class.getName());
 
     public static void main(String[] args) {
-        URI baseUri = UriBuilder.fromUri("http://localhost/").port(666).build();
+        URI baseUri = UriBuilder.fromUri("http://192.168.1.24/").port(666).build();
         ResourceConfig config = new ResourceConfig(Search.class, Task.class);
         HttpServer server = GrizzlyHttpServerFactory.createHttpServer(baseUri, config);
 
