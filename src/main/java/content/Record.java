@@ -8,26 +8,27 @@ import java.util.List;
  * A record item.
  */
 public class Record {
+    String taskId;
     String url;
     String content;
-    String images[];
+    List<String> images;
     int readCount;
     int participateCount;
     int commentCount;
 
-    void setUrl(String url) {
+    public void setUrl(String url) {
         this.url = url;
     }
 
-    void setContent(String content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
-    void setImages(List<String> images) {
-        this.images = (String[]) images.toArray();
+    public void setImages(List<String> images) {
+        this.images = images;
     }
 
-    void setReadCount(int readCount) {
+    public void setReadCount(int readCount) {
         this.readCount = readCount;
     }
 
@@ -38,10 +39,21 @@ public class Record {
     public void setCommentCount(int commentCount) {
         this.commentCount = commentCount;
     }
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public int getCommentCount() {
+        return commentCount;
+    }
 
     @Override
     public String toString() {
         return String.format("%s, %d, %d, %d, %s, %s\n",
-                url, readCount, participateCount, commentCount, Arrays.toString(images), content);
+                url, readCount, participateCount, commentCount, Arrays.toString(images.toArray()), content);
     }
 }

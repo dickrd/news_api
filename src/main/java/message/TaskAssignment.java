@@ -20,4 +20,12 @@ public class TaskAssignment {
         this.id = id;
         this.urls = urls;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public String[] getUrls() {
+        return urls;
+    }
 }

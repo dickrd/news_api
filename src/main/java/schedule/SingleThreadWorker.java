@@ -2,6 +2,7 @@ package schedule;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.sun.org.apache.bcel.internal.generic.GOTO;
 import content.Record;
 import message.TaskAssignment;
 import source.SearchSites;
@@ -36,9 +37,9 @@ public class SingleThreadWorker {
         try {
             worker = new Worker();
             worker.start();
-
+            Gson gson = new Gson();
             // TODO separate source.
-            SearchSites.SearchEngine[] engines = new Gson.fromJson(new FileReader("source.json"),
+            SearchSites.SearchEngine[] engines = gson.fromJson(new FileReader("source.json"),
                     new TypeToken<SearchSites.SearchEngine[]>(){}.getType());
             searchSites = new SearchSites(engines);
             redisConnection = new RedisConnection();
