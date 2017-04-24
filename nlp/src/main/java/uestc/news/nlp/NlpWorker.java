@@ -25,8 +25,8 @@ public class NlpWorker {
     private static final String dataUrl = "data/%s?page=%d&size=%d";
     private static final String dataSubmitUrl = "data/%s";
 
-    public static final int LENGTH_SUMMARY = 50;
-    public static final int SIZE_KEYWORDS = 5;
+    private static final int LENGTH_SUMMARY = 50;
+    private static final int SIZE_KEYWORDS = 5;
 
     private Hanlp hanlp;
     private Gson gson;
