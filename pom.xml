@@ -10,6 +10,7 @@
     <version>1.0.0</version>
     <modules>
         <module>nlp</module>
+        <module>web</module>
     </modules>
 
     <properties>

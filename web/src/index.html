@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="./material.min.css">
+    <script src="./material.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>Demo</title>
+</head>
+<body>
+<!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">演示系统</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link">
+                <!-- MDL Spinner Component -->
+                <div class="mdl-spinner mdl-js-spinner is-active"></div>
+            </a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div style="margin: 40px">
+            <ul id="content-list" class="mdl-list">
+                <li class="mdl-list__item mdl-list__item--three-line">
+                    <span class="mdl-list__item-primary-content">
+                        <span>Test Task</span>
+                        <span class="mdl-list__item-text-body">
+                            创建日期：2017年03月36日 09:17:05
+                        </span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                        <!-- Simple MDL Progress Bar -->
+                        <div id="p1" class="mdl-progress mdl-js-progress"></div>
+                    </span>
+                </li>
+                <li class="mdl-list__item mdl-list__item--three-line">
+                    <span class="mdl-list__item-primary-content">
+                        <span>Aaron Paul</span>
+                        <span class="mdl-list__item-text-body">
+                            创建日期：2017年03月06日 18:77:55
+                        </span>
+                    </span>
+                    <span class="mdl-list__item-secondary-content">
+                        已完成
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </main>
+</div>
+<script type="application/javascript">
+    document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+        this.MaterialProgress.setProgress(33);
+    });
+</script>
+</body>
+</html>
