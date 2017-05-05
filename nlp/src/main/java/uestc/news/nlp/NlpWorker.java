@@ -40,7 +40,7 @@ public class NlpWorker {
 
     public static void main(String[] args) throws IOException {
         Logger.getGlobal().addHandler(new ConsoleHandler());
-        new NlpWorker().work("i15b6109df77", 0, 5);
+        new NlpWorker().work("i15bd7caf6ff", 0, 5);
     }
 
     private void work(String taskId, int page, int size) throws IOException {
