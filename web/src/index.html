@@ -42,8 +42,9 @@
     const detailItem = `<a href="javascript: showDetail('{0}', '{1}')" style="width: 50px">详情</a>`;
     const dataPage = '<h4>{0}</h4><p>网址：<a target="_blank" href="{1}">{1}</a></p>' +
         '<p>时间：{2}</p><p>地点：{3}</p><p>人物：{4}</p>' +
-        '<p>{5}</p><p>详细内容：{6}</p>';
+        '<p>{5}</p><p><ul>{6}</ul></p><p>详细内容：{7}</p>';
     const imageItem = '<figure style="display: inline-block; margin: 0 16px 16px 0;width: 45%;"><img alt="{0}" width="100%" src="data:image/png;base64,{1}" /><figcaption>{0}</figcaption></figure>';
+    const commentItem = `<li>{0}（{1}）：{2} <a href="javascript: " onclick="analyze(this, '{2}')">情感分析</a></li>`;
 
     function format(format) {
         const args = Array.prototype.slice.call(arguments, 1);
@@ -133,17 +134,38 @@
                 }
 
                 const nlp = r.data.data;
+                let i, comments = '';
+                for (i = 0; i < item.hotComments.length; i++) {
+                    comments += format(commentItem,
+                        item.hotComments[i].userName,
+                        item.hotComments[i].location,
+                        item.hotComments[i].comment);
+                }
+                for (i = 0; i < item.newComments.length; i++) {
+                    comments += format(commentItem,
+                        item.newComments[i].userName,
+                        item.newComments[i].location,
+                        item.newComments[i].comment);
+                }
                 document.querySelector('#content-list').innerHTML = format(dataPage,
                     nlp.summary,
                     item.url,
-                    0,
+                    item.postTime,
                     nlp.places.join('，'),
                     nlp.people.join('，'),
                     img,
+                    comments,
                     item.content
                 );
             });
         })
+    }
+    
+    function analyze(item, text) {
+        ajax('GET', 'http://qc.hehehey.com:8888/' + encodeURIComponent(text), function (text) {
+            const r = JSON.parse(text);
+            item.innerText = r.label;
+        });
     }
 
     function homepage() {

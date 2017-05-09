@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="011c70f5-1cb2-4e09-9ee4-8c1c82a109cc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../news_api/web/src/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../news_api/.idea/misc.xml" afterPath="$PROJECT_DIR$/../news_api/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../news_api/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../news_api/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/NlpWorker.java" afterPath="$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/NlpWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../news_api/web/src/index.html" afterPath="$PROJECT_DIR$/../news_api/web/src/index.html" />
@@ -26,23 +24,53 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../news_api/nlp/pom.xml">
+        <entry file="file://$PROJECT_DIR$/../news_api/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="512">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NlpWorker.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../news_api/nlp/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NlpWorker.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/NlpWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+            <state relative-caret-position="304">
+              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PageData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/content/PageData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Record.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/content/Record.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,33 +85,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../news_api/web/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-57">
-              <caret line="163" column="67" lean-forward="false" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
+            <state relative-caret-position="375">
+              <caret line="166" column="37" lean-forward="true" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1493973592552" expanded="true" signature="1584:1596" ph="..." />
-                <marker date="1493973592552" expanded="true" signature="1736:1748" ph="..." />
-                <marker date="1493973592552" expanded="true" signature="1797:1809" ph="..." />
-                <marker date="1493973592552" expanded="true" signature="1868:1877" ph="..." />
-                <marker date="1493973592552" expanded="true" signature="1932:1943" ph="..." />
-                <marker date="1493973592552" expanded="true" signature="2033:2044" ph="..." />
-                <marker date="1493973592552" expanded="true" signature="2267:2323" ph="..." />
-                <marker date="1493973592552" expanded="true" signature="2358:2383" ph="data:" />
+                <marker date="1494292931923" expanded="true" signature="1584:1596" ph="..." />
+                <marker date="1494292931923" expanded="true" signature="1736:1748" ph="..." />
+                <marker date="1494292931923" expanded="true" signature="1797:1809" ph="..." />
+                <marker date="1494292931923" expanded="true" signature="1868:1877" ph="..." />
+                <marker date="1494292931923" expanded="true" signature="1932:1943" ph="..." />
+                <marker date="1494292931923" expanded="true" signature="2033:2044" ph="..." />
+                <marker date="1494292931923" expanded="true" signature="2286:2342" ph="..." />
+                <marker date="1494292931923" expanded="true" signature="2377:2402" ph="data:" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hanlp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/model/Hanlp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -93,17 +111,26 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Stanlp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/model/Stanlp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-              <folding />
+              <folding>
+                <element signature="e#502#503#0" expanded="false" />
+                <element signature="e#532#533#0" expanded="false" />
+                <element signature="e#569#570#0" expanded="false" />
+                <element signature="e#600#601#0" expanded="false" />
+                <element signature="e#638#639#0" expanded="false" />
+                <element signature="e#669#670#0" expanded="false" />
+                <element signature="e#704#705#0" expanded="false" />
+                <element signature="e#733#734#0" expanded="false" />
+                <element signature="e#779#780#0" expanded="false" />
+                <element signature="e#815#816#0" expanded="false" />
+                <element signature="e#850#851#0" expanded="false" />
+                <element signature="e#879#880#0" expanded="false" />
+                <element signature="e#925#926#0" expanded="false" />
+                <element signature="e#961#962#0" expanded="false" />
+                <element signature="e#1003#1004#0" expanded="false" />
+                <element signature="e#1039#1040#0" expanded="false" />
+                <element signature="e#1099#1100#0" expanded="false" />
+                <element signature="e#1149#1150#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,16 +140,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="9" column="1077" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="1077" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Specification.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/spockframework/spock-core/1.1-groovy-2.4-rc-2/spock-core-1.1-groovy-2.4-rc-2.jar!/spock/lang/Specification.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -166,8 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../news_api/src/main/java/schedule/TaskResponse.java" />
-        <option value="$PROJECT_DIR$/../news_api/src/main/java/schedule/TaskRequest.java" />
         <option value="$PROJECT_DIR$/../news_api/src/main/java/schedule/TaskAssignment.java" />
         <option value="$PROJECT_DIR$/../news_api/src/main/java/schedule/RedisSet.java" />
         <option value="$PROJECT_DIR$/../news_api/src/main/java/util/DigestUtil.java" />
@@ -212,11 +227,13 @@
         <option value="$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/Nlp.java" />
         <option value="$PROJECT_DIR$/../news_api/nlp/src/test/java/uestc/news/nlp/model/HanlpTest.java" />
         <option value="$PROJECT_DIR$/../news_api/nlp/src/test/java/uestc/news/nlp/model/StanlpTest.java" />
-        <option value="$PROJECT_DIR$/../news_api/nlp/pom.xml" />
         <option value="$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/model/Stanlp.java" />
         <option value="$PROJECT_DIR$/../news_api/nlp/src/test/java/uestc/news/nlp/model/StanlpTest.groovy" />
-        <option value="$PROJECT_DIR$/../news_api/web/src/index.html" />
+        <option value="$PROJECT_DIR$/../news_api/comments.txt" />
+        <option value="$PROJECT_DIR$/../news_api/src/main/java/content/Record.java" />
+        <option value="$PROJECT_DIR$/../news_api/nlp/pom.xml" />
         <option value="$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/NlpWorker.java" />
+        <option value="$PROJECT_DIR$/../news_api/web/src/index.html" />
       </list>
     </option>
   </component>
@@ -319,6 +336,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1265,7 +1296,7 @@
       <workItem from="1492480255201" duration="1566000" />
       <workItem from="1492482281534" duration="22955000" />
       <workItem from="1492657593820" duration="12819000" />
-      <workItem from="1493885219661" duration="19890000" />
+      <workItem from="1493885219661" duration="29455000" />
     </task>
     <task id="LOCAL-00001" summary="First working version.">
       <created>1490751578403</created>
@@ -1365,7 +1396,14 @@
       <option name="project" value="LOCAL" />
       <updated>1493890283779</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Web feature implement.">
+      <created>1493974580720</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1493974580720</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1401,7 +1439,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128917000" />
+    <option name="totallyTimeSpent" value="138482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
@@ -1478,7 +1516,8 @@
     <MESSAGE value="Code reformat." />
     <MESSAGE value="Add stanlp." />
     <MESSAGE value="Add web." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add web." />
+    <MESSAGE value="Web feature implement." />
+    <option name="LAST_COMMIT_MESSAGE" value="Web feature implement." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1490,7 +1529,7 @@
           <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="31" />
+      <option name="time" value="33" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1499,20 +1538,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/source/SearchSource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="58" column="96" lean-forward="false" selection-start-line="58" selection-start-column="96" selection-end-line="58" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/content/ParseMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../news_api/source.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="464">
@@ -1578,20 +1603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/content/PageData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/content/Record.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../news_api/nlp/nlp.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1632,6 +1643,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="911">
           <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1666,14 +1678,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../news_api/nlp/src/test/java/uestc/news/nlp/model/StanlpTest.java" />
     <entry file="file://$PROJECT_DIR$/../news_api/nlp/src/test/java/uestc/news/nlp/model/HanlpTest.java" />
-    <entry file="file://$PROJECT_DIR$/../news_api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/guokr/stan-cn-com/0.0.4/stan-cn-com-0.0.4.jar!/com/guokr/protocol/xcf/XcfConnection.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -1721,14 +1725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="58" column="45" lean-forward="true" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../news_api/nlp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1807,26 +1803,7 @@
         <state relative-caret-position="-560">
           <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../news_api/web/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-57">
-          <caret line="163" column="67" lean-forward="false" selection-start-line="163" selection-start-column="67" selection-end-line="163" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1493973592552" expanded="true" signature="1584:1596" ph="..." />
-            <marker date="1493973592552" expanded="true" signature="1736:1748" ph="..." />
-            <marker date="1493973592552" expanded="true" signature="1797:1809" ph="..." />
-            <marker date="1493973592552" expanded="true" signature="1868:1877" ph="..." />
-            <marker date="1493973592552" expanded="true" signature="1932:1943" ph="..." />
-            <marker date="1493973592552" expanded="true" signature="2033:2044" ph="..." />
-            <marker date="1493973592552" expanded="true" signature="2267:2323" ph="..." />
-            <marker date="1493973592552" expanded="true" signature="2358:2383" ph="data:" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1835,16 +1812,105 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#502#503#0" expanded="false" />
+            <element signature="e#532#533#0" expanded="false" />
+            <element signature="e#569#570#0" expanded="false" />
+            <element signature="e#600#601#0" expanded="false" />
+            <element signature="e#638#639#0" expanded="false" />
+            <element signature="e#669#670#0" expanded="false" />
+            <element signature="e#704#705#0" expanded="false" />
+            <element signature="e#733#734#0" expanded="false" />
+            <element signature="e#779#780#0" expanded="false" />
+            <element signature="e#815#816#0" expanded="false" />
+            <element signature="e#850#851#0" expanded="false" />
+            <element signature="e#879#880#0" expanded="false" />
+            <element signature="e#925#926#0" expanded="false" />
+            <element signature="e#961#962#0" expanded="false" />
+            <element signature="e#1003#1004#0" expanded="false" />
+            <element signature="e#1039#1040#0" expanded="false" />
+            <element signature="e#1099#1100#0" expanded="false" />
+            <element signature="e#1149#1150#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/dickrd/ghost/common/v1.2/common-v1.2.jar!/com/hehehey/ghost/record/PageData.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="28" column="35" lean-forward="false" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+          <folding>
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../news_api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/content/PageData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../news_api/src/main/java/content/Record.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../news_api/nlp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="30" column="21" lean-forward="false" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../news_api/nlp/src/main/java/uestc/news/nlp/NlpWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="42" selection-end-line="42" selection-end-column="42" />
+        <state relative-caret-position="304">
+          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../news_api/comments.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="186" column="19" lean-forward="false" selection-start-line="186" selection-start-column="19" selection-end-line="186" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../news_api/web/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="166" column="37" lean-forward="true" selection-start-line="166" selection-start-column="37" selection-end-line="166" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#main#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1494292931923" expanded="true" signature="1584:1596" ph="..." />
+            <marker date="1494292931923" expanded="true" signature="1736:1748" ph="..." />
+            <marker date="1494292931923" expanded="true" signature="1797:1809" ph="..." />
+            <marker date="1494292931923" expanded="true" signature="1868:1877" ph="..." />
+            <marker date="1494292931923" expanded="true" signature="1932:1943" ph="..." />
+            <marker date="1494292931923" expanded="true" signature="2033:2044" ph="..." />
+            <marker date="1494292931923" expanded="true" signature="2286:2342" ph="..." />
+            <marker date="1494292931923" expanded="true" signature="2377:2402" ph="data:" />
           </folding>
         </state>
       </provider>
