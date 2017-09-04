@@ -1,11 +1,11 @@
 import com.google.gson.Gson;
-import main.java.content.PageData;
-import main.java.content.Record;
-import main.java.message.Assignment;
+import content.PageData;
+import content.Record;
+import message.Assignment;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
-import main.java.util.GetUrlsFromRedis;
-import main.java.webpages.NeteaseNews;
+import util.GetUrlsFromRedis;
+import webpages.NeteaseNews;
 
 import java.io.IOException;
 

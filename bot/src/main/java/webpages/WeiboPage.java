@@ -1,16 +1,16 @@
-package main.java.webpages;
+package webpages;
 
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import main.java.content.Record;
+import content.Record;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import main.java.util.CommentInfo;
-import main.java.util.ImageDownload;
+import util.CommentInfo;
+import util.ImageDownload;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;

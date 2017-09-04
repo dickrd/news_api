@@ -1,4 +1,4 @@
-package main.java.download;
+package download;
 
 import java.io.*;
 import java.net.*;

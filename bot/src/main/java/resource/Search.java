@@ -1,11 +1,11 @@
-package main.java.resource;
+package resource;
 
 import com.google.gson.Gson;
-import main.java.content.Record;
-import main.java.message.QueryResponse;
-import main.java.message.SearchRequest;
-import main.java.message.SearchResponse;
-import main.java.schedule.SingleThreadWorker;
+import content.Record;
+import message.QueryResponse;
+import message.SearchRequest;
+import message.SearchResponse;
+import schedule.SingleThreadWorker;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

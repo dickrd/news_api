@@ -1,15 +1,15 @@
-package main.java.webpages;
+package webpages;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
-import main.java.content.Record;
+import content.Record;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import main.java.util.CommentInfo;
-import main.java.util.ImageDownload;
-import main.java.util.JsonToArrayList;
+import util.CommentInfo;
+import util.ImageDownload;
+import util.JsonToArrayList;
 
 import java.io.IOException;
 import java.util.*;

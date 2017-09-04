@@ -1,4 +1,4 @@
-package main.java.message;
+package message;
 
 /**
  * Created by Dick Zhou on 4/7/2017.

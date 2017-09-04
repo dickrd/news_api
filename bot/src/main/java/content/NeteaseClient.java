@@ -1,6 +1,6 @@
-package main.java.content;
+package content;
 
-import main.java.download.HttpClient;
+import download.HttpClient;
 
 import java.io.IOException;
 

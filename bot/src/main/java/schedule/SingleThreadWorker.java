@@ -1,12 +1,12 @@
-package main.java.schedule;
+package schedule;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import main.java.content.Record;
-import main.java.message.TaskAssignment;
-import main.java.source.SearchSource;
-import main.java.storage.DatabaseConnection;
-import main.java.util.SecurityUtil;
+import content.Record;
+import message.TaskAssignment;
+import source.SearchSource;
+import storage.DatabaseConnection;
+import util.SecurityUtil;
 
 import java.io.FileReader;
 import java.util.ArrayList;

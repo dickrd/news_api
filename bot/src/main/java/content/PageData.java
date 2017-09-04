@@ -1,4 +1,4 @@
-package main.java.content;
+package content;
 
 /**
  * Created by Dick Zhou on 3/29/2017.

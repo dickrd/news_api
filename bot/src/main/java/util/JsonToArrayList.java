@@ -1,4 +1,4 @@
-package main.java.util;
+package util;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;

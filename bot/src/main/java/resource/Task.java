@@ -1,9 +1,9 @@
-package main.java.resource;
+package resource;
 
 import com.google.gson.Gson;
-import main.java.message.TaskAssignment;
-import main.java.message.TaskRequest;
-import main.java.schedule.SingleThreadWorker;
+import message.TaskAssignment;
+import message.TaskRequest;
+import schedule.SingleThreadWorker;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;

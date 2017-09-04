@@ -1,8 +1,8 @@
 import org.glassfish.grizzly.http.server.HttpServer;
 import org.glassfish.jersey.grizzly2.httpserver.GrizzlyHttpServerFactory;
 import org.glassfish.jersey.server.ResourceConfig;
-import main.java.resource.Search;
-import main.java.resource.Task;
+import resource.Search;
+import resource.Task;
 
 import javax.ws.rs.core.Application;
 import javax.ws.rs.core.UriBuilder;

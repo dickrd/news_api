@@ -1,6 +1,6 @@
-package main.java.message;
+package message;
 
-import main.java.content.Record;
+import content.Record;
 
 /**
  * Created by Dick Zhou on 3/30/2017.

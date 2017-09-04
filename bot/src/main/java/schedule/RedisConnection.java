@@ -1,4 +1,4 @@
-package main.java.schedule;
+package schedule;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

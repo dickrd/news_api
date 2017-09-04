@@ -1,6 +1,6 @@
-package main.java.content;
+package content;
 
-import main.java.util.CommentInfo;
+import util.CommentInfo;
 
 import java.util.Arrays;
 import java.util.List;

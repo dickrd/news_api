@@ -1,9 +1,9 @@
-package main.java.source;
+package source;
 
-import main.java.content.JsoupContent;
-import main.java.content.RegexContent;
-import main.java.download.HttpClient;
-import main.java.content.ParseMethod;
+import content.JsoupContent;
+import content.RegexContent;
+import download.HttpClient;
+import content.ParseMethod;
 
 import java.io.IOException;
 import java.net.URLEncoder;

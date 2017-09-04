@@ -1,9 +1,9 @@
-package main.java.util;
+package util;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import main.java.message.Assignment;
-import main.java.message.Response;
+import message.Assignment;
+import message.Response;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 

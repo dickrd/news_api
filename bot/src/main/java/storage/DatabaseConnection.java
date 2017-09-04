@@ -1,6 +1,6 @@
-package main.java.storage;
+package storage;
 
-import main.java.content.Record;
+import content.Record;
 
 import java.sql.*;
 import java.util.List;
