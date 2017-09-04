@@ -58,7 +58,7 @@ public class DatabaseConnection {
         try{
             ResultSet result = conn.createStatement().executeQuery(sql);
             record.setUrl(result.getString("url"));
-            record.setContent(result.getString("content"));
+            record.setContent(result.getString("src/main/java/content"));
            // record.setImages(result.getBinaryStream("content"))//采用二进制流处理;
             record.setReadCount(result.getInt("readcount"));
             record.setParticipateCount(result.getInt("participatecount"));

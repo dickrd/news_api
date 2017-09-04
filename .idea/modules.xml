@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bot/bot.iml" filepath="$PROJECT_DIR$/bot/bot.iml" />
-      <module fileurl="file://$PROJECT_DIR$/news_api.iml" filepath="$PROJECT_DIR$/news_api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nlp/nlp.iml" filepath="$PROJECT_DIR$/nlp/nlp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/web/web.iml" filepath="$PROJECT_DIR$/web/web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../news_api/bot/bot.iml" filepath="$PROJECT_DIR$/../news_api/bot/bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../news_api/news_api.iml" filepath="$PROJECT_DIR$/../news_api/news_api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../news_api/nlp/nlp.iml" filepath="$PROJECT_DIR$/../news_api/nlp/nlp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../news_api/web/web.iml" filepath="$PROJECT_DIR$/../news_api/web/web.iml" />
     </modules>
   </component>
 </project>

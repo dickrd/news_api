@@ -69,7 +69,7 @@ function showTask(id) {
         for (i = 0; i < r.data.length; i++) {
             items += format(listItem,
                 r.data[i].data.summary,
-                convert(r.data[i].createdAt),
+                r.data[i].data.time,
                 format(detailItem, id, r.data[i].url));
         }
         document.querySelector('#content-list').innerHTML = items;

@@ -12,6 +12,7 @@
         <module>nlp</module>
         <module>web</module>
         <module>bot</module>
+        <module>bot</module>
     </modules>
 
     <properties>

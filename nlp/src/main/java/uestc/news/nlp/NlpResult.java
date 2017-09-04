@@ -6,6 +6,7 @@ package uestc.news.nlp;
  */
 public class NlpResult {
     private String summary;
+    private String time;
     private String keywords[];
     private Comment comments[];
 
@@ -21,6 +22,10 @@ public class NlpResult {
 
     public String getSummary() {
         return summary;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String[] getKeywords() {

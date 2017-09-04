@@ -26,7 +26,7 @@ public class NlpWorker {
 
     private static final Logger logger = Logger.getLogger(NlpWorker.class.getName());
 
-    private static final String baseUrl = "http://127.0.0.1:666/";
+    private static final String baseUrl = "http://123.206.108.70:666/";
     private static final String dataUrl = "data/%s?page=%d&size=%d";
     private static final String dataSubmitUrl = "data/%s";
 
@@ -45,8 +45,8 @@ public class NlpWorker {
 
     public static void main(String[] args) throws IOException {
         Logger.getGlobal().addHandler(new ConsoleHandler());
-        //new NlpWorker().work("i15be5809e2f", 0, 5);
-        new NlpWorker().downloadComment("i15be5800a1a", 0, 5);
+        new NlpWorker().work("i15be5809e2f", 0, 5);
+        //new NlpWorker().downloadComment("i15be5800a1a", 0, 5);
     }
 
     private void downloadComment(String taskId, int page, int size) throws IOException {
@@ -78,6 +78,7 @@ public class NlpWorker {
             try {
                 String content = data.getData().get("content").toString();
                 NlpResult nlpResult = hanlp.analyze(content);
+                nlpResult.setTime(data.getData().get("postTime").toString());
                 PageData theData = new PageData(data.getUrl(),
                         System.currentTimeMillis(),
                         gson.fromJson(gson.toJson(nlpResult), new TypeToken<HashMap<String, Object>>() {
