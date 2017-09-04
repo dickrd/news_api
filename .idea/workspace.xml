@@ -1,25 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/webpages/WeiboPage.java" line="106" />
+    <bookmark url="file://$PROJECT_DIR$/bot/src/main/java/webpages/WeiboPage.java" line="101" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="011c70f5-1cb2-4e09-9ee4-8c1c82a109cc" name="Default" comment="Add bots.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/testimg.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/CommentInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/ImageDownload.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/util/JsonToArrayList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/webpages/QQNews.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bot/bot.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bot/pom.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.classpath" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/test.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/testimg.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/Server.java" afterPath="$PROJECT_DIR$/bot/src/main/java/Server.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/content/JsoupContent.java" afterPath="$PROJECT_DIR$/bot/src/main/java/content/JsoupContent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/content/NeteaseClient.java" afterPath="$PROJECT_DIR$/bot/src/main/java/content/NeteaseClient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/content/PageData.java" afterPath="$PROJECT_DIR$/bot/src/main/java/content/PageData.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/content/ParseMethod.java" afterPath="$PROJECT_DIR$/bot/src/main/java/content/ParseMethod.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/content/Record.java" afterPath="$PROJECT_DIR$/bot/src/main/java/content/Record.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/content/RegexContent.java" afterPath="$PROJECT_DIR$/bot/src/main/java/content/RegexContent.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/download/HttpClient.java" afterPath="$PROJECT_DIR$/bot/src/main/java/download/HttpClient.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/getUrls.java" afterPath="$PROJECT_DIR$/bot/src/main/java/getUrls.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/message/Assignment.java" afterPath="$PROJECT_DIR$/bot/src/main/java/message/Assignment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/message/QueryResponse.java" afterPath="$PROJECT_DIR$/bot/src/main/java/message/QueryResponse.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/message/Response.java" afterPath="$PROJECT_DIR$/bot/src/main/java/message/Response.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/message/SearchRequest.java" afterPath="$PROJECT_DIR$/bot/src/main/java/message/SearchRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/message/SearchResponse.java" afterPath="$PROJECT_DIR$/bot/src/main/java/message/SearchResponse.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/message/TaskAssignment.java" afterPath="$PROJECT_DIR$/bot/src/main/java/message/TaskAssignment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/message/TaskRequest.java" afterPath="$PROJECT_DIR$/bot/src/main/java/message/TaskRequest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/resource/Search.java" afterPath="$PROJECT_DIR$/bot/src/main/java/resource/Search.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/resource/Task.java" afterPath="$PROJECT_DIR$/bot/src/main/java/resource/Task.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/schedule/RedisConnection.java" afterPath="$PROJECT_DIR$/bot/src/main/java/schedule/RedisConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/schedule/SingleThreadWorker.java" afterPath="$PROJECT_DIR$/bot/src/main/java/schedule/SingleThreadWorker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/source/SearchSource.java" afterPath="$PROJECT_DIR$/bot/src/main/java/source/SearchSource.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/storage/CsvFileStorage.java" afterPath="$PROJECT_DIR$/bot/src/main/java/storage/CsvFileStorage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/storage/DatabaseConnection.java" afterPath="$PROJECT_DIR$/bot/src/main/java/storage/DatabaseConnection.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/CommentInfo.java" afterPath="$PROJECT_DIR$/bot/src/main/java/util/CommentInfo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/GetUrlsFromRedis.java" afterPath="$PROJECT_DIR$/bot/src/main/java/util/GetUrlsFromRedis.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/ImageDownload.java" afterPath="$PROJECT_DIR$/bot/src/main/java/util/ImageDownload.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/JsonToArrayList.java" afterPath="$PROJECT_DIR$/bot/src/main/java/util/JsonToArrayList.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/util/SecurityUtil.java" afterPath="$PROJECT_DIR$/bot/src/main/java/util/SecurityUtil.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/webpages/NeteaseNews.java" afterPath="$PROJECT_DIR$/bot/src/main/java/webpages/NeteaseNews.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/webpages/QQNews.java" afterPath="$PROJECT_DIR$/bot/src/main/java/webpages/QQNews.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/webpages/WeiboPage.java" afterPath="$PROJECT_DIR$/bot/src/main/java/webpages/WeiboPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/content/Record.java" afterPath="$PROJECT_DIR$/src/main/java/content/Record.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/getUrls.java" afterPath="$PROJECT_DIR$/src/main/java/getUrls.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/util/GetUrlsFromRedis.java" afterPath="$PROJECT_DIR$/src/main/java/util/GetUrlsFromRedis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webpages/NeteaseNews.java" afterPath="$PROJECT_DIR$/src/main/java/webpages/NeteaseNews.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/webpages/WeiboPage.java" afterPath="$PROJECT_DIR$/src/main/java/webpages/WeiboPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/news_api.iml" afterPath="$PROJECT_DIR$/news_api.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/nlp/target/" />
+    <ignored path="$PROJECT_DIR$/web/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,11 +63,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/test.java">
+      <file leaf-file-name="getUrls.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot/src/main/java/getUrls.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="21" column="107" lean-forward="false" selection-start-line="21" selection-start-column="107" selection-end-line="21" selection-end-column="107" />
+            <state relative-caret-position="589">
+              <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,38 +75,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comments.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/comments.txt">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/nlp/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="684">
+              <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getUrls.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/getUrls.java">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bot/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+            <state relative-caret-position="570">
+              <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="news_api.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/news_api.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="114">
+              <caret line="6" column="87" lean-forward="false" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bot.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bot/bot.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Server.java">
+        <entry file="file://$PROJECT_DIR$/bot/src/main/java/Server.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ImageDownload.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/ImageDownload.java">
+        <entry file="file://$PROJECT_DIR$/bot/src/main/java/util/ImageDownload.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
               <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
@@ -86,50 +136,30 @@
         </entry>
       </file>
       <file leaf-file-name="NeteaseNews.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webpages/NeteaseNews.java">
+        <entry file="file://$PROJECT_DIR$/bot/src/main/java/webpages/NeteaseNews.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1691">
-              <caret line="102" column="70" lean-forward="false" selection-start-line="102" selection-start-column="70" selection-end-line="102" selection-end-column="70" />
+              <caret line="101" column="70" lean-forward="false" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="NeteaseClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/content/NeteaseClient.java">
+        <entry file="file://$PROJECT_DIR$/bot/src/main/java/content/NeteaseClient.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QQNews.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webpages/QQNews.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="WeiboPage.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/webpages/WeiboPage.java">
+        <entry file="file://$PROJECT_DIR$/bot/src/main/java/webpages/WeiboPage.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="328">
-              <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CommentInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/util/CommentInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -191,9 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/message/SearchResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/message/TaskRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resource/Search.java" />
         <option value="$PROJECT_DIR$/src/main/java/message/TaskAssignment.java" />
         <option value="$PROJECT_DIR$/src/main/java/resource/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/download/BaiduSearch.java" />
@@ -242,6 +269,9 @@
         <option value="$PROJECT_DIR$/src/main/java/test.java" />
         <option value="$PROJECT_DIR$/comments.txt" />
         <option value="$PROJECT_DIR$/src/main/java/getUrls.java" />
+        <option value="$PROJECT_DIR$/bot/src/main/java/getUrls.java" />
+        <option value="$PROJECT_DIR$/news_api.iml" />
+        <option value="$PROJECT_DIR$/bot/pom.xml" />
       </list>
     </option>
   </component>
@@ -328,15 +358,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -350,6 +372,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="nlp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nlp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="news_api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -359,10 +431,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webpages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -395,13 +463,19 @@
       <recent name="uestc.news.nlp" />
       <recent name="schedule" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="groovy.util.GroovyTestCase" />
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\first1hand\IdeaProjects\news_api\bot" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="content" />
       <recent name="message" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="groovy.util.GroovyTestCase" />
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\first1hand\IdeaProjects\news_api\bot" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -863,7 +937,21 @@
       <option name="project" value="LOCAL" />
       <updated>1492594184408</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add bots.">
+      <created>1504485118938</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1504485118938</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add bots.">
+      <created>1504485205426</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1504485205426</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -912,7 +1000,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -923,13 +1011,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295129" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30260304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30260304" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31570512" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31570512" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -945,7 +1034,6 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1006,9 +1094,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.3.2/hanlp-portable-1.3.2.jar!/com/hankcs/hanlp/HanLP.class" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/String.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_25/src.zip!/java/util/HashSet.java" />
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_25/src.zip!/java/util/Set.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.3.2/hanlp-portable-1.3.2-sources.jar!/com/hankcs/hanlp/seg/common/Term.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.3.2/hanlp-portable-1.3.2-sources.jar!/com/hankcs/hanlp/corpus/tag/Nature.java" />
@@ -1031,13 +1116,6 @@
     <entry file="jar://$MAVEN_REPOSITORY$/com/guokr/stan-cn-ner/0.0.4/stan-cn-ner-0.0.4.jar!/com/guokr/nlp/ner/NerWrapper.class" />
     <entry file="jar://F:/stan-cn-com-0.0.4.jar!/edu/stanford/nlp/dcoref/Document.class" />
     <entry file="jar://F:/stan-cn-com-0.0.4.jar!/edu/stanford/nlp/pipeline/Annotation.class" />
-    <entry file="file://$PROJECT_DIR$/nlp/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://D:/Program Files/Java/jdk1.8.0_25/src.zip!/java/lang/ClassLoader.java" />
     <entry file="jar://F:/stan-cn-com-0.0.4.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.class" />
     <entry file="jar://$MAVEN_REPOSITORY$/edu/stanford/nlp/stanford-corenlp/3.7.0/stanford-corenlp-3.7.0.jar!/edu/stanford/nlp/pipeline/StanfordCoreNLP.class" />
@@ -1056,7 +1134,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content/PageData.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/content/PageData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
@@ -1099,7 +1177,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/GetUrlsFromRedis.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/util/GetUrlsFromRedis.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
@@ -1134,14 +1212,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content/Record.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/content/Record.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/SecurityUtil.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/util/SecurityUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
@@ -1149,7 +1227,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/JsonToArrayList.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/util/JsonToArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
@@ -1157,7 +1235,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/CommentInfo.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/util/CommentInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
@@ -1165,7 +1243,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webpages/QQNews.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/webpages/QQNews.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
@@ -1173,7 +1251,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/util/ImageDownload.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/util/ImageDownload.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
@@ -1188,18 +1266,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webpages/NeteaseNews.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/webpages/NeteaseNews.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1691">
-          <caret line="102" column="70" lean-forward="false" selection-start-line="102" selection-start-column="70" selection-end-line="102" selection-end-column="70" />
+          <caret line="101" column="70" lean-forward="false" selection-start-line="101" selection-start-column="70" selection-end-line="101" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/content/NeteaseClient.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/content/NeteaseClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1212,37 +1290,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Server.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/Server.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/webpages/WeiboPage.java">
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/webpages/WeiboPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
-          <caret line="103" column="0" lean-forward="true" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/getUrls.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="34" column="34" lean-forward="false" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
+        <state relative-caret-position="390">
           <caret line="21" column="107" lean-forward="false" selection-start-line="21" selection-start-column="107" selection-end-line="21" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/bot.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/src/main/java/getUrls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nlp/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" column="21" lean-forward="false" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/news_api.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="87" lean-forward="false" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
