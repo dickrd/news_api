@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bot" />
         <module name="nlp" />
         <module name="web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
+      <module name="bot" target="1.8" />
       <module name="news_api" target="1.8" />
       <module name="nlp" target="1.8" />
       <module name="web" target="1.8" />
