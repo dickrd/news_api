@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="./material.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>Demo</title>
+</head>
+<body>
+<!-- No header, and the drawer stays open on larger screens (fixed drawer). -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title" onclick="homepage()" style="cursor: pointer">演示系统</span>
+        <nav id="nav-list" class="mdl-navigation">
+            <a class="mdl-navigation__link">
+                <!-- MDL Spinner Component -->
+                <div class="mdl-spinner mdl-js-spinner is-active"></div>
+            </a>
+        </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <div style="margin: 40px">
+            <ul id="content-list" class="mdl-list">
+            </ul>
+        </div>
+    </main>
+</div>
+<script type="application/javascript" src="util.js"></script>
+<script type="application/javascript" src="index.js"></script>
+<script type="application/javascript" src="./pace.min.js"></script>
+</body>
+</html>

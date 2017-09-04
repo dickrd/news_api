@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="nlp" />
+        <module name="web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="news_api" target="1.8" />
       <module name="nlp" target="1.8" />
+      <module name="web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

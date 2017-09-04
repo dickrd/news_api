@@ -1,14 +1,19 @@
 package uestc.news.nlp;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.internal.LinkedTreeMap;
 import com.google.gson.reflect.TypeToken;
 import com.hehehey.ghost.message.Response;
 import com.hehehey.ghost.record.PageData;
 import com.hehehey.ghost.util.HttpClient;
 import uestc.news.nlp.model.Hanlp;
 
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
+import java.io.OutputStreamWriter;
+import java.util.*;
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -40,7 +45,31 @@ public class NlpWorker {
 
     public static void main(String[] args) throws IOException {
         Logger.getGlobal().addHandler(new ConsoleHandler());
-        new NlpWorker().work("i15b6109df77", 0, 5);
+        //new NlpWorker().work("i15be5809e2f", 0, 5);
+        new NlpWorker().downloadComment("i15be5800a1a", 0, 5);
+    }
+
+    private void downloadComment(String taskId, int page, int size) throws IOException {
+        PageData[] dataArray = getData(baseUrl + String.format(dataUrl, taskId, page, size));
+
+        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream("comments.txt", false), "utf-8"));
+
+        for (PageData data: dataArray) {
+            if (data.getData().get("hotComments") != null)
+                for (Object comment : (List<Object>) data.getData().get("hotComments")) {
+                    LinkedTreeMap<String, String> map = (LinkedTreeMap<String, String>) comment;
+                    bufferedWriter.write(map.get("comment"));
+                    bufferedWriter.newLine();
+                }
+            if (data.getData().get("newComments") != null)
+                for (Object comment : (List<Object>) data.getData().get("newComments")) {
+                    LinkedTreeMap<String, String> map = (LinkedTreeMap<String, String>) comment;
+                    bufferedWriter.write(map.get("comment"));
+                    bufferedWriter.newLine();
+                }
+        }
+        bufferedWriter.close();
     }
 
     private void work(String taskId, int page, int size) throws IOException {
