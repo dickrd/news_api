@@ -1,31 +1,54 @@
+import com.google.gson.Gson;
+import content.PageData;
+import content.Record;
+import message.Assignment;
 import message.TaskAssignment;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
 import util.GetUrlsFromRedis;
+import webpages.NeteaseNews;
 import webpages.WeiboPage;
+
+import java.io.IOException;
+import java.lang.reflect.WildcardType;
 
 
 /**
  * Created by first1hand on 2017/4/5.
  */
 public class getUrls {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
         GetUrlsFromRedis getUrlsFromRedis = new GetUrlsFromRedis();
-        String keys[] = {};
-        WeiboPage weiboPagetest = new WeiboPage("1","http://weibo.com/6085695259/ED4G2d0mz?refer_flag=1001030103&type=comment#_rnd1491725269721" );
-        // WeiboPage weiboPage = new WeiboPage(taskAssignment.getId(),"http://weibo.com/5797152628/ED5Lczbj8?refer_flag=1001030103_" );
-        weiboPagetest.dealWeiboPage();
-        for (String key:keys) {
-            getUrlsFromRedis.getTaskResponse(key);
-            TaskAssignment taskAssignment = getUrlsFromRedis.getTaskAssignment();
-            for(String url:taskAssignment.getUrls()){
-                WeiboPage weiboPage = new WeiboPage("1","http://weibo.com/5797152628/ED5Lczbj8?refer_flag=1001030103_" );
-                // WeiboPage weiboPage = new WeiboPage(taskAssignment.getId(),"http://weibo.com/5797152628/ED5Lczbj8?refer_flag=1001030103_" );
-                weiboPage.dealWeiboPage();
-                switch (key){
+        String keys[] = {"news.163.com", "weibo.com"};
 
+        while(true) {
+            for (String key : keys) {
+                getUrlsFromRedis.getTaskResponse(key);
+                Assignment taskAssignment = getUrlsFromRedis.getTaskAssignment();
+                if(taskAssignment!=null){
+                    String taskId = taskAssignment.getId();
+                    for (String url : taskAssignment.getTasks()) {
+                        Record record = new Record();
+                        switch (key) {
+                            case "weibo.com":
+                                //record = new WeiboPage(taskId, url).dealWeiboPage();
+                                break;
+                            case "news.163.com":
+                                record = new NeteaseNews(taskId, url).dealNeteasenews();
+                                break;
+                            default:
+                                break;
+                        }
+                        if(record!=null){
+                            String taskInfo = Jsoup.connect("http://192.168.1.24:666/data/" + record.getTaskId())
+                                    .requestBody(new Gson().toJson(new PageData(record.getUrl(), System.currentTimeMillis(), record)))
+                                    .header("Content-Type", "application/json").method(Connection.Method.PUT).ignoreContentType(true).execute().body();
+                            //System.out.println(taskInfo);
+                        }
+                    }
                 }
             }
         }
-
     }
 }

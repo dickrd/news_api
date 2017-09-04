@@ -12,17 +12,19 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.omg.CORBA.INTERNAL;
+import util.CommentInfo;
+import util.ImageDownload;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.net.URLConnection;
+
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 /**
  * Created by first1hand on 2017/4/6.
@@ -49,9 +51,8 @@ public class WeiboPage {
         }
     }
 
-    public boolean dealWeiboPage(){
+    public  Record dealWeiboPage(){
         try {
-
             Document doc = Jsoup
                     .connect(url)
                     .headers(headers)
@@ -63,105 +64,115 @@ public class WeiboPage {
             record.setUrl(url);
             String tempData = null;
             Elements elements = doc.getElementsByTag("script");
-            for (Element element:elements
-                 ) {
+            for (Element element : elements
+                    ) {
                 tempData = element.data();
-                if(tempData.contains("pl.content.weiboDetail.index"))
-                    break;
-            }
-            String contentInHtml = tempData;
-            String contentHtmlSplit[] = new String[0];
-            if (contentInHtml != null) {
-                contentHtmlSplit = contentInHtml.split("\\{");
-            }
-            String contentJson = String.format("{%s}", contentHtmlSplit[1].split("}")[0]);
-            JsonObject json = new JsonParser().parse(contentJson).getAsJsonObject();
-            String html;
-            if (json.has("html")){
-                html = json.get("html").getAsString();
-            }else
-                return false;
-            Document docNew = Jsoup.parse(html);
-            String content = docNew.getElementsByClass("WB_text W_f14").text();
-            record.setContent(content);
+                if (tempData.contains("pl.content.weiboDetail.index")) {
+                    //System.out.println(tempData);
+                    String contentJson = tempData.substring(8, tempData.length()-1);
+                   // System.out.println(contentJson);
+                    JsonObject json = new JsonParser().parse(contentJson).getAsJsonObject();
+                    String html;
+                    if (json.has("html")) {
+                        html = json.get("html").getAsString();
+                    } else
+                        return null;
 
-            String commentAttr = docNew.getElementsByAttributeValue("action-type","fl_comment").get(0).text();
-            String commentCount = commentAttr.split(String.valueOf(commentAttr.charAt(0)))[1];
-            if(commentCount.equals("评论"))
-                record.setCommentCount(0);
-            else
-                record.setCommentCount(Integer.parseInt(commentCount));
+                    Document docNew = Jsoup.parse(html);
+                    String content = docNew.getElementsByClass("WB_text W_f14").text();
+                    System.out.println(content);
+                    record.setContent(content);
 
-            List<String> imageUrls = new ArrayList<>();
-            List<String> images = new ArrayList<>();
-            Elements imageElements = docNew.getElementsByClass("media_box").get(0).children().get(0).children();
-            //System.out.println(imageElements.get(0).children());
-            for(Element element:imageElements){
-                imageUrls.add(element.children().select("img").attr("src"));
-                System.out.println(element.children().attr("src"));
+                    String commentAttr = docNew.getElementsByAttributeValue("action-type", "fl_comment").get(0).text();
+                    String commentCount = commentAttr.split(String.valueOf(commentAttr.charAt(0)))[1];
+                    if (commentCount.equals("评论"))
+                        record.setCommentCount(0);
+                    else
+                        record.setCommentCount(Integer.parseInt(commentCount));
+
+
+                    List<CommentInfo> comments = new ArrayList<>();
+
+                    int pageNum = 2;
+                    String weiboId = docNew.getElementsByClass("WB_cardwrap WB_feed_type S_bg2 ").get(0).attr("mid");
+                    System.out.println(weiboId);
+                    String commentsJsonUrl = "http://weibo.com/aj/v6/comment/big?ajwvr=6&id="+weiboId+"&from=singleWeiBo&page="+pageNum;
+                    String commentsUrlJsonStr = Jsoup.connect(commentsJsonUrl)
+                            .headers(headers)
+                            .ignoreContentType(true)
+                            .timeout(6000).execute().body();
+
+                    String commentsUrl = new JsonParser().parse(commentsUrlJsonStr).getAsJsonObject().get("data").getAsJsonObject().get("html").getAsString();
+
+                    Elements commentListElements = Jsoup.parse(commentsUrl).getElementsByAttributeValue("node-type","root_comment");
+                    System.out.println(commentListElements.size());
+
+                    for(Element commentElement: commentListElements){
+                        CommentInfo tempComment = new CommentInfo();
+                        List<String> commentImgList = new ArrayList<>();
+                        Elements list_con = commentElement.getElementsByClass("list_con");
+                        Element WB_text = list_con.get(0).getElementsByClass("WB_text").get(0);
+                        Element userInfo = WB_text.getElementsByTag("a").get(0);
+                        tempComment.setUserName(userInfo.text());
+                        tempComment.setUserId(userInfo.attr("usercard").replaceAll("id=",""));
+                        tempComment.setComment(WB_text.text());
+                        System.out.println(userInfo.text()+":"+WB_text.text());
+                        if(WB_text.getElementsByTag("img").size()!=0){
+                            for(Element imginCommentElement: WB_text.getElementsByTag("img")){
+                                String expressionSrc = imginCommentElement.attr("src");
+                                if(!expressionSrc.contains("http:"))
+                                    expressionSrc = "http:" + expressionSrc;
+                                commentImgList.add(ImageDownload.imageDownload(expressionSrc));
+                            }
+                        }
+                        Element comment_media_disp = list_con.get(0).getElementsByClass("WB_expand_media_box").get(0);
+                        if(comment_media_disp.getElementsByTag("img").size() != 0){
+                            for(Element imginCommentElement: WB_text.getElementsByTag("img")){
+                                String expressionSrc = imginCommentElement.attr("src");
+                                if(!expressionSrc.contains("http:"))
+                                    expressionSrc = "http:" + expressionSrc;
+                                commentImgList.add(ImageDownload.imageDownload(expressionSrc));
+                            }
+                        }
+                        tempComment.setImages(commentImgList);
+                        comments.add(tempComment);
+                    }
+                    record.setHotComments(comments);
+
+
+
+
+                    List<String> imageUrls = new ArrayList<>();
+                    List<String[]> images = new ArrayList<>();
+                    if (docNew.getElementsByClass("media_box").size() != 0) {
+                        Elements imageElements = docNew.getElementsByClass("media_box").get(0).children().get(0).children();
+                        for (Element element0 : imageElements) {
+                            imageUrls.add(element0.children().select("img").attr("src"));
+                            //System.out.println(element0.children().attr("src"));
+                        }
+                    }
+                    Elements imagesInContent = docNew.getElementsByClass("WB_text W_f14").get(0).children().select("img");
+                    for (Element element0 : imagesInContent) {
+                        imageUrls.add(element0.attr("src"));
+                        System.out.println(element.attr("src"));
+                    }
+
+                    for (String imageUrl : imageUrls) {
+                        String temp[] = new String[2];
+                        temp[0] = "无描述";
+                        temp[1] = ImageDownload.imageDownload(imageUrl);
+                        images.add(temp);
+                    }
+                    record.setImages(images);
+                    record.setParticipateCount(-1);
+                    record.setReadCount(-1);
+                    return record;
+                }
             }
-            Elements imagesInContent = docNew.getElementsByClass("WB_text W_f14").get(0).children().select("img");
-            for (Element element:imagesInContent){
-                imageUrls.add(element.attr("src"));
-                System.out.println(element.attr("src"));
-            }
-
-            for(String imageUrl:imageUrls){
-                URL image = new URL(imageUrl);
-                URLConnection urlConnection = image.openConnection();
-                InputStream is = urlConnection.getInputStream();
-                byte[] bytes = new byte[is.available()];
-                if(is.read(bytes)!=0)
-                    System.out.println("下载图片成功！");
-                else
-                    System.out.println("下载图片失败！");
-                is.close();
-                String imageStr = byte2hex(bytes);
-                //System.out.println(imageStr);
-                images.add(imageStr);
-            }
-            record.setImages(images);
-            record.setParticipateCount(-1);
-            record.setReadCount(-1);
-
-            return true;
-
+            System.out.println("页面不存在！");
+            return null;
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
-        }
-    }
-
-    private static String byte2hex(byte[] b) // 二进制转字符串
-    {
-        StringBuilder sb = new StringBuilder();
-        String stmp = "";
-        for (byte aB : b) {
-            stmp = Integer.toHexString(aB & 0XFF);
-            if (stmp.length() == 1) {
-                sb.append("0").append(stmp);
-            } else {
-                sb.append(stmp);
-            }
-
-        }
-        return sb.toString();
-    }
-
-    public static byte[] hex2byte(String str) { // 字符串转二进制
-        if (str == null)
-            return null;
-        str = str.trim();
-        int len = str.length();
-        if (len == 0 || len % 2 == 1)
-            return null;
-        byte[] b = new byte[len / 2];
-        try {
-            for (int i = 0; i < str.length(); i += 2) {
-                b[i / 2] = (byte) Integer.decode("0X" + str.substring(i, i + 2)).intValue();
-            }
-            return b;
-        } catch (Exception e) {
             return null;
         }
     }

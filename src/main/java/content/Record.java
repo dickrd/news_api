@@ -1,5 +1,8 @@
 package content;
 
+import util.CommentInfo;
+import webpages.NeteaseNews;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -11,10 +14,13 @@ public class Record {
     String taskId;
     String url;
     String content;
-    List<String> images;
+    List<String[]> images;
     int readCount;
     int participateCount;
     int commentCount;
+    List<CommentInfo> hotComments;
+    List<CommentInfo> newComments;
+    String postTime;
 
     public void setUrl(String url) {
         this.url = url;
@@ -24,7 +30,7 @@ public class Record {
         this.content = content;
     }
 
-    public void setImages(List<String> images) {
+    public void setImages(List<String[]> images) {
         this.images = images;
     }
 
@@ -49,6 +55,50 @@ public class Record {
 
     public int getCommentCount() {
         return commentCount;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public List<String[]> getImages() {
+        return images;
+    }
+
+    public int getReadCount() {
+        return readCount;
+    }
+
+    public int getParticipateCount() {
+        return participateCount;
+    }
+
+    public List<CommentInfo> getHotComments() {
+        return hotComments;
+    }
+
+    public void setHotComments(List<CommentInfo> hotComments) {
+        this.hotComments = hotComments;
+    }
+
+    public List<CommentInfo> getNewComments() {
+        return newComments;
+    }
+
+    public void setNewComments(List<CommentInfo> newComments) {
+        this.newComments = newComments;
+    }
+
+    public String getPostTime() {
+        return postTime;
+    }
+
+    public void setPostTime(String postTime) {
+        this.postTime = postTime;
     }
 
     @Override
