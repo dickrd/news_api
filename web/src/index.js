@@ -1,6 +1,5 @@
 const baseUrl = 'http://127.0.0.1:666';
 
-const navItem = `<a class="mdl-navigation__link">{0}</a>`;
 const listItem = '<li class="mdl-list__item mdl-list__item--three-line">' +
     '<span class="mdl-list__item-primary-content">' +
     `<span style="cursor: pointer" onclick="showTask('{3}', {4});">{0}</span>` +
@@ -238,11 +237,12 @@ function homepage(push=true) {
             return
         }
 
-        let i, items = '';
+        let i;
         for (i = 0; i < r.data.length; i++) {
-            items += format(navItem, r.data[i].name);
             tasks.push(r.data[i])
         }
+        if (push)
+            history.pushState(null, "homepage", "?");
         document.querySelector('#content-list').innerHTML = '';
 
         for (i = 0; i < tasks.length; i++) {
@@ -275,8 +275,6 @@ function homepage(push=true) {
                     const div = document.createElement('div');
                     div.innerHTML = htmlString;
 
-                    if (push)
-                        history.pushState(null, "homepage", "?");
                     document.querySelector('#content-list').appendChild(div.firstChild);
                 },
                 '',
