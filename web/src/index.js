@@ -16,9 +16,9 @@ const completeItem = '<a style="width: 50px">已完成</a>';
 const newsListItem = '<li class="mdl-list__item mdl-list__item--three-line">' +
     '<span class="mdl-list__item-primary-content">' +
     `<span style="cursor: pointer" onclick="showDetail('{1}', '{2}');">{0}</span>` +
-    '<span class="mdl-list__item-text-body">发布日期：{3}</span>' +
+    '<span class="mdl-list__item-text-body">发布日期：{3}<span style="display: inline-block; width: 30px;"></span>评论：{4}</span>' +
     '</span>' +
-    '<span class="mdl-list__item-secondary-content">{4}</span>' +
+    '<span class="mdl-list__item-secondary-content">{5}</span>' +
     '</li>';
 const detailItem = `<a href="{0}">{1}</a>`;
 
@@ -85,7 +85,7 @@ function ajax(method, url, callback, data, extra) {
 
 function showTask(id, numPages, pageNum=0, push=true) {
     ajax('GET',
-        baseUrl + '/data/' + id + '?size=10&fields=url&fields=data.content&fields=data.postTime&page=' + pageNum,
+        baseUrl + '/data/' + id + '?size=10&fields=url&fields=data.content&fields=data.postTime&fields=data.commentCount&page=' + pageNum,
         function (text) {
         const r = JSON.parse(text);
         if (r.status !== 'ok') {
@@ -103,6 +103,7 @@ function showTask(id, numPages, pageNum=0, push=true) {
                 id,
                 r.data[i].url,
                 postTime,
+                r.data[i].data.commentCount,
                 format(detailItem, r.data[i].url, r.data[i].url.split('/')[2]));
         }
         if (numPages > 1) {
