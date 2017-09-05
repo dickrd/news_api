@@ -271,7 +271,7 @@ function homepage(push=true) {
                         convert(tasks[extra].createdAt),
                         progress,
                         r.data.id,
-                        r.data.dataCount / 10);
+                        Math.ceil(r.data.dataCount / 10));
                     const div = document.createElement('div');
                     div.innerHTML = htmlString;
 

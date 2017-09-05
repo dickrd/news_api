@@ -155,7 +155,7 @@ public class WeiboPage {
                     for (String imageUrl : imageUrls) {
                         String imgUrl = imageUrl;
                         if (!imageUrl.startsWith("http")) {
-                            imgUrl = "https://" + imageUrl;
+                            imgUrl = "https:" + imageUrl;
                         }
                         String temp[] = new String[2];
                         temp[0] = "无描述";
