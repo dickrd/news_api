@@ -89,7 +89,7 @@ public class WeiboPage {
                     List<CommentInfo> comments = new ArrayList<>();
 
                     int pageNum = 2;
-                    String weiboId = docNew.getElementsByClass("WB_cardwrap WB_feed_type S_bg2 ").get(0).attr("mid");
+                    String weiboId = docNew.getElementsByClass("WB_feed_like").get(0).attr("mid");
                     System.out.println(weiboId);
                     String commentsJsonUrl = "http://weibo.com/aj/v6/comment/big?ajwvr=6&id="+weiboId+"&from=singleWeiBo&page="+pageNum;
                     String commentsUrlJsonStr = Jsoup.connect(commentsJsonUrl)
@@ -153,9 +153,13 @@ public class WeiboPage {
                     }
 
                     for (String imageUrl : imageUrls) {
+                        String imgUrl = imageUrl;
+                        if (!imageUrl.startsWith("http")) {
+                            imgUrl = "https://" + imageUrl;
+                        }
                         String temp[] = new String[2];
                         temp[0] = "无描述";
-                        temp[1] = ImageDownload.imageDownload(imageUrl);
+                        temp[1] = ImageDownload.imageDownload(imgUrl);
                         images.add(temp);
                     }
                     record.setImages(images);

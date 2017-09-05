@@ -1,4 +1,4 @@
-const baseUrl = 'http://123.206.108.70:666';
+const baseUrl = 'http://127.0.0.1:666';
 const navItem = `<a class="mdl-navigation__link" href="javascript: showTask('{0}')">{1}</a>`;
 const listItem = '<li class="mdl-list__item mdl-list__item--three-line"><span class="mdl-list__item-primary-content">' +
     '<span>{0}</span><span class="mdl-list__item-text-body">创建日期：{1}</span></span>' +

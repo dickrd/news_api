@@ -6,6 +6,7 @@ import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import util.GetUrlsFromRedis;
 import webpages.NeteaseNews;
+import webpages.WeiboPage;
 
 import java.io.IOException;
 
@@ -29,7 +30,7 @@ public class getUrls {
                         Record record = new Record();
                         switch (key) {
                             case "weibo.com":
-                                //record = new WeiboPage(taskId, url).dealWeiboPage();
+                                record = new WeiboPage(taskId, url).dealWeiboPage();
                                 break;
                             case "news.163.com":
                                 record = new NeteaseNews(taskId, url).dealNeteasenews();
