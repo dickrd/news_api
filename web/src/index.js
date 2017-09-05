@@ -1,16 +1,27 @@
 const baseUrl = 'http://127.0.0.1:666';
 
 const navItem = `<a class="mdl-navigation__link">{0}</a>`;
-const listItem = `<li class="mdl-list__item mdl-list__item--three-line" onclick="showTask('{3}', {4})"><span class="mdl-list__item-primary-content">` +
-    '<span>{0}</span><span class="mdl-list__item-text-body">发布日期：{1}</span></span>' +
-    '<span class="mdl-list__item-secondary-content">{2}</span></li>';
+const listItem = '<li class="mdl-list__item mdl-list__item--three-line">' +
+    '<span class="mdl-list__item-primary-content">' +
+    `<span style="cursor: pointer" onclick="showTask('{3}', {4});">{0}</span>` +
+    '<span class="mdl-list__item-text-body">任务创建日期：{1}</span>' +
+    '</span>' +
+    '<span class="mdl-list__item-secondary-content">{2}</span>' +
+    '</li>';
 
 const progressItem = '<span style="width: 250px" class="mdl-progress mdl-js-progress is-upgraded" data-upgraded=",MaterialProgress">' +
     '<span class="progressbar bar bar1" style="width: {0}%;"></span><span class="bufferbar bar bar2" style="width: 100%;">' +
     '</span><span class="auxbar bar bar3" style="width: 0;"></span></span>';
 const completeItem = '<a style="width: 50px">已完成</a>';
 
-const detailItem = `<a href="javascript: showDetail('{0}', '{1}')" style="width: 50px">详情</a>`;
+const newsListItem = '<li class="mdl-list__item mdl-list__item--three-line">' +
+    '<span class="mdl-list__item-primary-content">' +
+    `<span style="cursor: pointer" onclick="showDetail('{1}', '{2}');">{0}</span>` +
+    '<span class="mdl-list__item-text-body">发布日期：{3}</span>' +
+    '</span>' +
+    '<span class="mdl-list__item-secondary-content">{4}</span>' +
+    '</li>';
+const detailItem = `<a href="{0}">{1}</a>`;
 
 const pagationItem = '<div class="pagination">' +
     `<a href="javascript: showTask('{0}', {1}, {2})" class="">&laquo;</a>` +
@@ -19,9 +30,14 @@ const pagationItem = '<div class="pagination">' +
     '</div>';
 const pageItem = `<a href="javascript: showTask('{0}', {1}, {2})" class="{4}">{3}</a>`;
 
-const dataPage = '<h4>{0}</h4><p>网址：<a target="_blank" href="{1}">{1}</a></p>' +
+const dataPage = '<div style="padding: 0 20px;">' +
+    '<h4>{0}</h4>' +
+    '<p>网址：<a target="_blank" href="{1}">{1}</a></p>' +
     '<p>时间：{2}</p>' +
-    '<p>{3}</p><p><ul>{4}</ul></p><p>详细内容：{5}</p>';
+    '<p>{3}</p>' +
+    '<p><ul>{4}</ul></p>' +
+    '<p>详细内容：{5}</p>' +
+    '</div>';
 const imageItem = '<figure style="display: inline-block; margin: 0 16px 16px 0;width: 45%;"><img alt="{0}" width="100%" src="data:image/png;base64,{1}" /><figcaption>{0}</figcaption></figure>';
 const commentItem = `<li>{0}（{1}）：{2}</li>`;
 
@@ -68,7 +84,7 @@ function ajax(method, url, callback, data, extra) {
     }
 }
 
-function showTask(id, numPages, pageNum=0) {
+function showTask(id, numPages, pageNum=0, push=true) {
     ajax('GET',
         baseUrl + '/data/' + id + '?size=10&fields=url&fields=data.content&fields=data.postTime&page=' + pageNum,
         function (text) {
@@ -83,10 +99,12 @@ function showTask(id, numPages, pageNum=0) {
             let postTime = r.data[i].data.postTime;
             if (!postTime)
                 postTime = "未知";
-            items += format(listItem,
+            items += format(newsListItem,
                 r.data[i].data.content.substring(0, 50) + "...",
+                id,
+                r.data[i].url,
                 postTime,
-                format(detailItem, id, r.data[i].url));
+                format(detailItem, r.data[i].url, r.data[i].url.split('/')[2]));
         }
         if (numPages > 1) {
             let i, pages = '';
@@ -118,12 +136,24 @@ function showTask(id, numPages, pageNum=0) {
             pages);
         }
 
+        if (push) {
+            const state = {
+                page: 'task',
+                taskId: id,
+                pageNum: pageNum,
+                numPages: numPages
+            };
+            history.pushState(state,
+                "task",
+                "?taskId=" + id + "&numPages=" + numPages + "&pageNum=" + pageNum
+            );
+        }
         document.querySelector('#content-list').innerHTML = items;
         document.querySelector('#content').scrollIntoView();
     });
 }
 
-function showDetail(id, url) {
+function showDetail(id, url, push=true) {
     ajax('GET', baseUrl + '/data/' + id + '/' + encodeURIComponent(url), function (text) {
         const r = JSON.parse(text);
         if (r.status !== 'ok') {
@@ -173,10 +203,21 @@ function showDetail(id, url) {
             }
         }
 
+        if (push) {
+            const state = {
+                page: 'detail',
+                taskId: id,
+                url: url
+            };
+            history.pushState(state,
+                "detail",
+                "?taskId=" + id + "&url=" + encodeURIComponent(url)
+            );
+        }
+
         let postTime = item.postTime;
         if (!postTime)
             postTime = "未知";
-
         document.querySelector('#content-list').innerHTML = format(dataPage,
             item.content.substring(0, 50) + "...",
             item.url,
@@ -188,14 +229,7 @@ function showDetail(id, url) {
     })
 }
 
-function analyze(item, text) {
-    ajax('GET', 'http://119.23.251.243/cla/' + encodeURIComponent(text), function (text) {
-        const r = JSON.parse(text);
-        item.innerText = r.label;
-    });
-}
-
-function homepage() {
+function homepage(push=true) {
     const tasks = [];
     ajax('GET', baseUrl + '/task', function (text) {
         const r = JSON.parse(text);
@@ -209,7 +243,6 @@ function homepage() {
             items += format(navItem, r.data[i].name);
             tasks.push(r.data[i])
         }
-        document.querySelector('#nav-list').innerHTML = items;
         document.querySelector('#content-list').innerHTML = '';
 
         for (i = 0; i < tasks.length; i++) {
@@ -241,6 +274,9 @@ function homepage() {
                         r.data.dataCount / 10);
                     const div = document.createElement('div');
                     div.innerHTML = htmlString;
+
+                    if (push)
+                        history.pushState(null, "homepage", "?");
                     document.querySelector('#content-list').appendChild(div.firstChild);
                 },
                 '',
@@ -255,4 +291,29 @@ window.paceOptions = {
         //ignoreURLs: ['cla', /cla/]
     }
 };
-homepage();
+
+window.addEventListener('popstate', function(e) {
+    const data = e.state;
+    if (data === null) {
+        homepage(false);
+    }
+    else if (data.page === 'task') {
+        showTask(data.taskId, data.numPages, data.pageNum, false);
+    }
+    else if (data.page === 'detail') {
+        showDetail(data.taskId, data.url, false);
+    }
+});
+
+let queryString = window.location.search.substring(1);
+if (queryString.includes('&pageNum=')) {
+    const queries = queryString.split('&');
+    showTask(queries[0].split('=')[1], parseInt(queries[1].split('=')[1]), parseInt(queries[2].split('=')[1]), false);
+}
+else if (queryString.includes('&url=')) {
+    const queries = queryString.split('&');
+    showDetail(queries[0].split('=')[1], decodeURIComponent(queries[1].split('=')[1]), false);
+}
+else {
+    homepage(false);
+}
