@@ -1,18 +1,29 @@
 const baseUrl = 'http://127.0.0.1:666';
-const navItem = `<a class="mdl-navigation__link" href="javascript: showTask('{0}')">{1}</a>`;
-const listItem = '<li class="mdl-list__item mdl-list__item--three-line"><span class="mdl-list__item-primary-content">' +
-    '<span>{0}</span><span class="mdl-list__item-text-body">创建日期：{1}</span></span>' +
+
+const navItem = `<a class="mdl-navigation__link">{0}</a>`;
+const listItem = `<li class="mdl-list__item mdl-list__item--three-line" onclick="showTask('{3}', {4})"><span class="mdl-list__item-primary-content">` +
+    '<span>{0}</span><span class="mdl-list__item-text-body">发布日期：{1}</span></span>' +
     '<span class="mdl-list__item-secondary-content">{2}</span></li>';
+
 const progressItem = '<span style="width: 250px" class="mdl-progress mdl-js-progress is-upgraded" data-upgraded=",MaterialProgress">' +
     '<span class="progressbar bar bar1" style="width: {0}%;"></span><span class="bufferbar bar bar2" style="width: 100%;">' +
     '</span><span class="auxbar bar bar3" style="width: 0;"></span></span>';
 const completeItem = '<a style="width: 50px">已完成</a>';
+
 const detailItem = `<a href="javascript: showDetail('{0}', '{1}')" style="width: 50px">详情</a>`;
+
+const pagationItem = '<div class="pagination">' +
+    `<a href="javascript: showTask('{0}', {1}, {2})" class="">&laquo;</a>` +
+    '{4}' +
+    `<a href="javascript: showTask('{0}', {1}, {3})" class="">&raquo;</a>` +
+    '</div>';
+const pageItem = `<a href="javascript: showTask('{0}', {1}, {2})" class="{4}">{3}</a>`;
+
 const dataPage = '<h4>{0}</h4><p>网址：<a target="_blank" href="{1}">{1}</a></p>' +
-    '<p>时间：{2}</p><p>地点：{3}</p><p>人物：{4}</p>' +
-    '<p>{5}</p><p><ul>{6}</ul></p><p>详细内容：{7}</p>';
+    '<p>时间：{2}</p>' +
+    '<p>{3}</p><p><ul>{4}</ul></p><p>详细内容：{5}</p>';
 const imageItem = '<figure style="display: inline-block; margin: 0 16px 16px 0;width: 45%;"><img alt="{0}" width="100%" src="data:image/png;base64,{1}" /><figcaption>{0}</figcaption></figure>';
-const commentItem = `<li>{0}（{1}）：{2} <a href="javascript: " onclick="analyze(this, '{2}')">情感分析</a></li>`;
+const commentItem = `<li>{0}（{1}）：{2}</li>`;
 
 function format(format) {
     const args = Array.prototype.slice.call(arguments, 1);
@@ -57,8 +68,10 @@ function ajax(method, url, callback, data, extra) {
     }
 }
 
-function showTask(id) {
-    ajax('GET', baseUrl + '/data/nlp' + id + '?size=10&page=0', function (text) {
+function showTask(id, numPages, pageNum=0) {
+    ajax('GET',
+        baseUrl + '/data/' + id + '?size=10&fields=url&fields=data.content&fields=data.postTime&page=' + pageNum,
+        function (text) {
         const r = JSON.parse(text);
         if (r.status !== 'ok') {
             console.log(r.data);
@@ -67,12 +80,46 @@ function showTask(id) {
 
         let i, items = '';
         for (i = 0; i < r.data.length; i++) {
+            let postTime = r.data[i].data.postTime;
+            if (!postTime)
+                postTime = "未知";
             items += format(listItem,
-                r.data[i].data.summary,
-                r.data[i].data.time,
+                r.data[i].data.content.substring(0, 50) + "...",
+                postTime,
                 format(detailItem, id, r.data[i].url));
         }
+        if (numPages > 1) {
+            let i, pages = '';
+            let startPage = pageNum > 2 ? pageNum - 2 : 0;
+            for (i = 0; i < 6; i++) {
+                if (startPage >= numPages)
+                    break;
+                if (startPage === pageNum)
+                    pages += format(pageItem,
+                    id,
+                    numPages,
+                    pageNum,
+                    pageNum + 1,
+                    'active');
+                else
+                    pages += format(pageItem,
+                        id,
+                        numPages,
+                        startPage,
+                        startPage + 1,
+                        '');
+                startPage++;
+            }
+            items += format(pagationItem,
+            id,
+            numPages,
+            pageNum === 0 ? 0 : pageNum - 1,
+            pageNum === numPages - 1 ? pageNum : pageNum + 1,
+            pages);
+        }
+
         document.querySelector('#content-list').innerHTML = items;
+        document.querySelector('#content').scrollIntoView();
     });
 }
 
@@ -89,43 +136,55 @@ function showDetail(id, url) {
         let i, img = '';
         if (item.images) {
             for (i = 0; i < item.images.length; i++) {
+                if (item.images[i][1] === null)
+                    continue;
                 img += format(imageItem, item.images[i][0],
                     btoa(String.fromCharCode.apply(null, hexStringToByteArray(item.images[i][1]))));
             }
         }
 
-        ajax('GET', baseUrl + '/data/nlp' + id + '/' + encodeURIComponent(url), function (text) {
-            const r = JSON.parse(text);
-            if (r.status !== 'ok') {
-                console.log(r.data);
-                return
-            }
+        let comments = '';
+        for (i = 0; i < item.hotComments.length; i++) {
+            let userName = item.hotComments[i].userName;
+            if (!userName)
+                userName = "未知用户";
+            let location = item.hotComments[i].location;
+            if (!location)
+                location = "未知来源";
 
-            const nlp = r.data.data;
-            let i, comments = '';
-            for (i = 0; i < item.hotComments.length; i++) {
-                comments += format(commentItem,
-                    item.hotComments[i].userName,
-                    item.hotComments[i].location,
-                    item.hotComments[i].comment);
-            }
+            comments += format(commentItem,
+                userName,
+                location,
+                item.hotComments[i].comment);
+        }
+        if (item.newComments) {
             for (i = 0; i < item.newComments.length; i++) {
+                let userName = item.newComments[i].userName;
+                if (!userName)
+                    userName = "未知用户";
+                let location = item.newComments[i].location;
+                if (!location)
+                    location = "未知来源";
+
                 comments += format(commentItem,
-                    item.newComments[i].userName,
-                    item.newComments[i].location,
+                    userName,
+                    location,
                     item.newComments[i].comment);
             }
-            document.querySelector('#content-list').innerHTML = format(dataPage,
-                nlp.summary,
-                item.url,
-                item.postTime,
-                nlp.places.join('，'),
-                nlp.people.join('，'),
-                img,
-                comments,
-                item.content
-            );
-        });
+        }
+
+        let postTime = item.postTime;
+        if (!postTime)
+            postTime = "未知";
+
+        document.querySelector('#content-list').innerHTML = format(dataPage,
+            item.content.substring(0, 50) + "...",
+            item.url,
+            postTime,
+            img,
+            comments,
+            item.content
+        );
     })
 }
 
@@ -147,7 +206,7 @@ function homepage() {
 
         let i, items = '';
         for (i = 0; i < r.data.length; i++) {
-            items += format(navItem, r.data[i].id, r.data[i].name);
+            items += format(navItem, r.data[i].name);
             tasks.push(r.data[i])
         }
         document.querySelector('#nav-list').innerHTML = items;
@@ -177,7 +236,9 @@ function homepage() {
                     const htmlString = format(listItem,
                         tasks[extra].name,
                         convert(tasks[extra].createdAt),
-                        progress);
+                        progress,
+                        r.data.id,
+                        r.data.dataCount / 10);
                     const div = document.createElement('div');
                     div.innerHTML = htmlString;
                     document.querySelector('#content-list').appendChild(div.firstChild);
